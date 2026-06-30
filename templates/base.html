@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="uz" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}Chevrolet O'zbekiston - zamonaviy avtomobillar, eng yaxshi narxlar va professional xizmat{% endblock %}">
+    <meta name="keywords" content="Chevrolet, avtomobil, O'zbekiston, Tracker, Equinox, Malibu">
+    <meta name="author" content="Chevrolet Uzbekistan">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}Chevrolet UZ{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Chevrolet O'zbekiston rasmiy sayt{% endblock %}">
+    <meta property="og:type" content="website">
+
+    <title>{% block title %}Chevrolet UZ{% endblock %} | Chevrolet O'zbekiston</title>
+
+    <!-- Bootstrap 5 Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================================
+           CHEVROLET UZ — Asosiy uslub (qora va oltin brendiga mos)
+           ===================================================================== */
+        :root {
+            --chev-black:     #0D0D0D;
+            --chev-dark:      #1A1A1A;
+            --chev-charcoal:  #2C2C2C;
+            --chev-gold:      #C9A84C;
+            --chev-gold-light:#E8C97A;
+            --chev-gold-dark: #9E7B30;
+            --chev-silver:    #A8A9AD;
+            --chev-white:     #F5F5F0;
+            --chev-red:       #C8102E;
+            --chev-bg-light:  #F8F8F6;
+            --chev-text:      #1A1A1A;
+            --chev-text-muted:#6C6C6C;
+            --transition:     all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: var(--chev-white);
+            color: var(--chev-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* =====================================================================
+           NAVBAR
+           ===================================================================== */
+        .navbar-chevrolet {
+            background-color: var(--chev-black) !important;
+            border-bottom: 2px solid var(--chev-gold);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1050;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+
+        .navbar-chevrolet .navbar-brand {
+            padding: 12px 0;
+        }
+
+        .chev-logo-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--chev-white) !important;
+            text-decoration: none;
+        }
+
+        .chev-logo-text span {
+            color: var(--chev-gold);
+        }
+
+        .navbar-chevrolet .nav-link {
+            color: rgba(245,245,240,0.85) !important;
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 24px 16px !important;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .navbar-chevrolet .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--chev-gold);
+            transition: var(--transition);
+        }
+
+        .navbar-chevrolet .nav-link:hover,
+        .navbar-chevrolet .nav-link.active {
+            color: var(--chev-gold) !important;
+        }
+
+        .navbar-chevrolet .nav-link:hover::after,
+        .navbar-chevrolet .nav-link.active::after {
+            width: 80%;
+        }
+
+        .navbar-toggler {
+            border-color: var(--chev-gold) !important;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        /* Qidiruv formasi */
+        .navbar-search .form-control {
+            background: var(--chev-charcoal);
+            border: 1px solid var(--chev-silver);
+            color: var(--chev-white);
+            font-size: 0.85rem;
+            border-radius: 0;
+        }
+
+        .navbar-search .form-control::placeholder { color: var(--chev-silver); }
+        .navbar-search .form-control:focus {
+            background: var(--chev-dark);
+            border-color: var(--chev-gold);
+            color: var(--chev-white);
+            box-shadow: 0 0 0 2px rgba(201,168,76,0.25);
+        }
+
+        .btn-chev-search {
+            background: var(--chev-gold);
+            border: none;
+            color: var(--chev-black);
+            border-radius: 0;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-chev-search:hover {
+            background: var(--chev-gold-light);
+            color: var(--chev-black);
+        }
+
+        /* =====================================================================
+           TUGMALAR
+           ===================================================================== */
+        .btn-chevrolet {
+            background: var(--chev-gold);
+            border: 2px solid var(--chev-gold);
+            color: var(--chev-black);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 12px 28px;
+            border-radius: 0;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-chevrolet:hover {
+            background: transparent;
+            color: var(--chev-gold);
+            text-decoration: none;
+        }
+
+        .btn-chev-outline {
+            background: transparent;
+            border: 2px solid var(--chev-gold);
+            color: var(--chev-gold);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px 26px;
+            border-radius: 0;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-chev-outline:hover {
+            background: var(--chev-gold);
+            color: var(--chev-black);
+        }
+
+        /* =====================================================================
+           KARTA (AVTOMOBIL CARD)
+           ===================================================================== */
+        .car-card {
+            background: #fff;
+            border: none;
+            border-radius: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .car-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .car-card-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: var(--chev-bg-light);
+        }
+
+        .car-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .car-card:hover .car-card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .car-card-badge {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            background: var(--chev-gold);
+            color: var(--chev-black);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 14px;
+        }
+
+        .car-card-body {
+            padding: 20px;
+            border-top: 3px solid var(--chev-bg-light);
+        }
+
+        .car-card-brand {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--chev-gold);
+            margin-bottom: 4px;
+        }
+
+        .car-card-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--chev-black);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .car-card-price {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--chev-red);
+            margin-bottom: 0;
+        }
+
+        .car-spec-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--chev-bg-light);
+            color: var(--chev-text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin: 2px;
+        }
+
+        /* =====================================================================
+           SAHIFA SARLAVHASI
+           ===================================================================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--chev-black) 0%, var(--chev-charcoal) 100%);
+            color: var(--chev-white);
+            padding: 60px 0 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--chev-gold-dark), var(--chev-gold-light), var(--chev-gold-dark));
+        }
+
+        .page-hero-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--chev-gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .page-hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1;
+            letter-spacing: -1px;
+            margin-bottom: 0;
+        }
+
+        /* =====================================================================
+           BO'LIM SARLAVHASI
+           ===================================================================== */
+        .section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            color: var(--chev-black);
+        }
+
+        .section-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--chev-gold);
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--chev-gold);
+            margin: 16px 0 24px;
+        }
+
+        /* =====================================================================
+           XABARLAR (ALERTS)
+           ===================================================================== */
+        .alert {
+            border-radius: 0;
+            border-left: 4px solid;
+            font-size: 0.9rem;
+        }
+
+        .alert-success {
+            border-left-color: #198754;
+            background: #d1e7dd;
+            color: #0a3622;
+        }
+
+        .alert-danger {
+            border-left-color: #dc3545;
+            background: #f8d7da;
+            color: #58151c;
+        }
+
+        .alert-warning {
+            border-left-color: var(--chev-gold);
+            background: #fff3cd;
+            color: #664d03;
+        }
+
+        /* =====================================================================
+           FORMA USLUBLARI
+           ===================================================================== */
+        .form-control, .form-select {
+            border-radius: 0;
+            border-color: #dee2e6;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--chev-gold);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.2);
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--chev-text);
+            letter-spacing: 0.3px;
+        }
+
+        .invalid-feedback { font-size: 0.8rem; }
+
+        /* =====================================================================
+           FOOTER
+           ===================================================================== */
+        .footer-chevrolet {
+            background: var(--chev-black);
+            color: rgba(245,245,240,0.75);
+            padding: 64px 0 0;
+            border-top: 3px solid var(--chev-gold);
+        }
+
+        .footer-brand {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--chev-white);
+            text-decoration: none;
+        }
+
+        .footer-brand span { color: var(--chev-gold); }
+
+        .footer-heading {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--chev-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+
+        .footer-links li { margin-bottom: 8px; }
+
+        .footer-links a {
+            color: rgba(245,245,240,0.65);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--chev-gold);
+            padding-left: 6px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(201,168,76,0.4);
+            color: var(--chev-silver);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-right: 8px;
+        }
+
+        .footer-social a:hover {
+            background: var(--chev-gold);
+            border-color: var(--chev-gold);
+            color: var(--chev-black);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201,168,76,0.2);
+            padding: 20px 0;
+            margin-top: 48px;
+            font-size: 0.8rem;
+            color: rgba(245,245,240,0.4);
+        }
+
+        /* =====================================================================
+           SAHIFALASH (PAGINATION)
+           ===================================================================== */
+        .pagination .page-link {
+            border-radius: 0;
+            border-color: #dee2e6;
+            color: var(--chev-black);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .pagination .page-link:hover,
+        .pagination .page-item.active .page-link {
+            background: var(--chev-gold);
+            border-color: var(--chev-gold);
+            color: var(--chev-black);
+        }
+
+        /* =====================================================================
+           RESPONSIVE
+           ===================================================================== */
+        @media (max-width: 991.98px) {
+            .navbar-chevrolet .nav-link {
+                padding: 12px 8px !important;
+                border-bottom: 1px solid rgba(201,168,76,0.1);
+            }
+            .navbar-chevrolet .nav-link::after { display: none; }
+        }
+
+        @media (max-width: 767.98px) {
+            .car-card-name { font-size: 1.1rem; }
+            .car-card-price { font-size: 1.2rem; }
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATSIYA PANELI
+     ============================================================ -->
+<nav class="navbar navbar-expand-lg navbar-chevrolet">
+    <div class="container">
+        <!-- Logotip -->
+        <a class="navbar-brand" href="{% url 'main:home' %}">
+            <span class="chev-logo-text">CHEVROLET <span>UZ</span></span>
+        </a>
+
+        <!-- Mobil tugma -->
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false"
+                aria-label="Menyuni ochish">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigatsiya menyusi -->
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                       href="{% url 'main:home' %}">
+                        Bosh sahifa
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'car' in request.resolver_match.url_name %}active{% endif %}"
+                       href="{% url 'main:car_list' %}">
+                        Avtomobillar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'news' in request.resolver_match.url_name %}active{% endif %}"
+                       href="{% url 'main:news_list' %}">
+                        Yangiliklar
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Qidiruv -->
+            <form class="d-flex navbar-search me-3" method="get" action="{% url 'main:search' %}">
+                <input class="form-control" type="search" name="q"
+                       placeholder="Qidirish..." aria-label="Qidirish"
+                       value="{{ request.GET.q }}" style="width:220px;">
+                <button class="btn btn-chev-search" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+
+            <!-- Foydalanuvchi tugmalari -->
+            <div class="d-flex align-items-center gap-2">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'main:profile' %}" class="btn-chev-outline py-2 px-3"
+                       style="font-size:0.78rem;">
+                        <i class="bi bi-person-circle me-1"></i>
+                        {{ user.get_short_name|default:user.username }}
+                    </a>
+                    <form action="{% url 'logout' %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-chevrolet py-2 px-3"
+                                style="font-size:0.78rem;" title="Chiqish">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn-chev-outline py-2 px-3"
+                       style="font-size:0.78rem;">
+                        <i class="bi bi-person me-1"></i>Kirish
+                    </a>
+                    <a href="{% url 'main:register' %}" class="btn-chevrolet py-2 px-3"
+                       style="font-size:0.78rem;">
+                        <i class="bi bi-person-plus me-1"></i>Royxat
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     XABARLAR (FLASH MESSAGES)
+     ============================================================ -->
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Yopish"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- ============================================================
+     ASOSIY KONTENT
+     ============================================================ -->
+<main id="main-content">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer-chevrolet">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- Brend haqida -->
+            <div class="col-lg-4">
+                <a href="{% url 'main:home' %}" class="footer-brand d-block mb-16">
+                    CHEVROLET <span>UZ</span>
+                </a>
+                <p class="mt-3" style="font-size:0.88rem; line-height:1.7;">
+                    Chevrolet O'zbekiston — zamonaviy avtomobillar, ishonchli texnik xizmat
+                    va eng yaxshi narxlar bilan sizning xizmatda.
+                </p>
+                <div class="footer-social mt-4">
+                    <a href="#" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Havolalar -->
+            <div class="col-sm-6 col-lg-2 offset-lg-1">
+                <div class="footer-heading">Sayt</div>
+                <ul class="footer-links">
+                    <li><a href="{% url 'main:home' %}">Bosh sahifa</a></li>
+                    <li><a href="{% url 'main:car_list' %}">Avtomobillar</a></li>
+                    <li><a href="{% url 'main:news_list' %}">Yangiliklar</a></li>
+                    <li><a href="{% url 'main:search' %}">Qidiruv</a></li>
+                </ul>
+            </div>
+
+            <!-- Modellar -->
+            <div class="col-sm-6 col-lg-2">
+                <div class="footer-heading">Modellar</div>
+                <ul class="footer-links">
+                    <li><a href="{% url 'main:car_list' %}?category=sedan">Sedan</a></li>
+                    <li><a href="{% url 'main:car_list' %}?category=suv">SUV</a></li>
+                    <li><a href="{% url 'main:car_list' %}?category=crossover">Crossover</a></li>
+                    <li><a href="{% url 'main:car_list' %}?category=electric">Elektr</a></li>
+                </ul>
+            </div>
+
+            <!-- Aloqa -->
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-heading">Aloqa</div>
+                <ul class="footer-links">
+                    <li>
+                        <i class="bi bi-telephone me-2" style="color:var(--chev-gold)"></i>
+                        <a href="tel:+998712345678">+998 71 234-56-78</a>
+                    </li>
+                    <li>
+                        <i class="bi bi-envelope me-2" style="color:var(--chev-gold)"></i>
+                        <a href="mailto:info@chevrolet.uz">info@chevrolet.uz</a>
+                    </li>
+                    <li>
+                        <i class="bi bi-geo-alt me-2" style="color:var(--chev-gold)"></i>
+                        Toshkent, O'zbekiston
+                    </li>
+                    <li>
+                        <i class="bi bi-clock me-2" style="color:var(--chev-gold)"></i>
+                        Dushanba–Shanba: 9:00–18:00
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer pastki qism -->
+    <div class="footer-bottom">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <span>© {% now "Y" %} Chevrolet O'zbekiston. Barcha huquqlar himoyalangan.</span>
+            <span>Maxfiylik siyosati | Foydalanish shartlari</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Navbar scroll effekti
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar-chevrolet');
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.6)';
+        } else {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.4)';
+        }
+    });
+
+    // Alert xabarlarini 5 soniyada avtomatik yopish
+    document.addEventListener('DOMContentLoaded', () => {
+        const alerts = document.querySelectorAll('.alert.fade.show');
+        alerts.forEach(alert => {
+            setTimeout(() => {
+                const bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+                if (bsAlert) bsAlert.close();
+            }, 5000);
+        });
+    });
+</script>
+
+{% block extra_js %}{% endblock %}
+</body>
+</html>

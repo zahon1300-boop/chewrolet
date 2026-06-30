@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <h1>Chevrolet Uzbekistan</h1>
+    <p>Siz uchun eng yaxshi avtomobillar</p>
+</section>
+
+<section class="featured-cars">
+    <h2>Tanlangan avtomobillar</h2>
+    <div class="grid">
+        {% for car in featured_cars %}
+        <div class="card">
+            {% if car.image %}
+            <img src="{{ car.image.url }}" alt="{{ car.name }}">
+            {% endif %}
+            <h3>{{ car.name }}</h3>
+            <p>{{ car.subtitle }}</p>
+            <a href="{% url 'main:car_detail' slug=car.slug %}" class="btn">Batafsil</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Kategoriyalar</h2>
+    <div class="grid">
+        {% for category in categories %}
+        <div class="category-card">
+            <h3>{{ category.name }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

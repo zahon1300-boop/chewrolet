@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="car-detail">
+    <h1>{{ car.name }}</h1>
+    
+    <div class="car-main">
+        {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.name }}">
+        {% endif %}
+        
+        <div class="car-info">
+            <p class="price">{{ car.get_display_price|floatformat:0 }} so'm</p>
+            <p>{{ car.description }}</p>
+            {% if car.online_buy_url %}
+            <a href="{{ car.online_buy_url }}" class="btn">Onlayn xarid</a>
+            {% endif %}
+        </div>
+    </div>
+    
+    {% if specifications %}
+    <h2>Texnik xususiyatlar</h2>
+    <table class="specs">
+        {% for spec in specifications %}
+        <tr>
+            <td>{{ spec.name }}</td>
+            <td>{{ spec.value }}{% if spec.unit %} {{ spec.unit }}{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    {% if gallery %}
+    <h2>Galereya</h2>
+    <div class="gallery">
+        {% for img in gallery %}
+        <img src="{{ img.image.url }}" alt="{{ img.alt_text }}">
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

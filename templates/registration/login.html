@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+
+{% block title %}Kirish{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-80">
+            <div class="col-sm-10 col-md-7 col-lg-5">
+
+                <!-- Logo -->
+                <div class="text-center mb-4">
+                    <a href="{% url 'main:home' %}" class="auth-logo">
+                        CHEVROLET <span>UZ</span>
+                    </a>
+                    <p class="auth-subtitle mt-2">Shaxsiy kabinetga kirish</p>
+                </div>
+
+                <div class="auth-card">
+                    <div class="auth-card-header">
+                        <i class="bi bi-person-lock me-2"></i> Tizimga kirish
+                    </div>
+
+                    <div class="auth-card-body">
+                        <!-- Xato xabarlari -->
+                        {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                            <div><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <form method="post" novalidate>
+                            {% csrf_token %}
+
+                            <!-- Username -->
+                            <div class="mb-3">
+                                <label for="{{ form.username.id_for_label }}" class="form-label">
+                                    <i class="bi bi-person me-1"></i>Foydalanuvchi nomi
+                                </label>
+                                <input type="text"
+                                       name="{{ form.username.html_name }}"
+                                       id="{{ form.username.id_for_label }}"
+                                       class="form-control {% if form.username.errors %}is-invalid{% endif %}"
+                                       placeholder="username"
+                                       value="{{ form.username.value|default:'' }}"
+                                       autofocus autocomplete="username" required>
+                                {% if form.username.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %}{{ error }}{% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Parol -->
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <label for="{{ form.password.id_for_label }}" class="form-label">
+                                        <i class="bi bi-lock me-1"></i>Parol
+                                    </label>
+                                    <a href="{% url 'password_reset' %}" class="forgot-link">
+                                        Parolni unutdingizmi?
+                                    </a>
+                                </div>
+                                <div class="input-group">
+                                    <input type="password"
+                                           name="{{ form.password.html_name }}"
+                                           id="{{ form.password.id_for_label }}"
+                                           class="form-control {% if form.password.errors %}is-invalid{% endif %}"
+                                           placeholder="••••••••"
+                                           autocomplete="current-password" required>
+                                    <button class="btn btn-outline-secondary toggle-pass" type="button"
+                                            onclick="togglePassword('{{ form.password.id_for_label }}', this)"
+                                            aria-label="Parolni ko'rsatish">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                {% if form.password.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.password.errors %}{{ error }}{% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Eslab qolish -->
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="remember"
+                                       name="remember" style="accent-color:var(--chev-gold);">
+                                <label class="form-check-label" for="remember"
+                                       style="font-size:0.85rem; cursor:pointer;">
+                                    Meni eslab qolish
+                                </label>
+                            </div>
+
+                            <!-- Kirish tugmasi -->
+                            <button type="submit" class="btn-chevrolet w-100 d-block text-center py-3">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Kirish
+                            </button>
+
+                            {% if next %}
+                            <input type="hidden" name="next" value="{{ next }}">
+                            {% endif %}
+                        </form>
+
+                        <hr class="my-4" style="border-color:var(--chev-gold); opacity:0.3;">
+
+                        <p class="text-center mb-0" style="font-size:0.88rem; color:var(--chev-text-muted);">
+                            Akkauntingiz yo'qmi?
+                            <a href="{% url 'main:home' %}" class="auth-register-link">
+                                Bosh sahifaga qaytish
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .auth-section {
+        background: linear-gradient(135deg, var(--chev-black) 0%, var(--chev-charcoal) 100%);
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+
+    .min-vh-80 { min-height: 80vh; }
+
+    .auth-logo {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 900; font-size: 2rem;
+        letter-spacing: 3px; text-transform: uppercase;
+        color: #fff; text-decoration: none;
+    }
+
+    .auth-logo span { color: var(--chev-gold); }
+
+    .auth-subtitle {
+        color: rgba(245,245,240,0.5);
+        font-size: 0.85rem; letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .auth-card {
+        background: #fff;
+        border-top: 3px solid var(--chev-gold);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .auth-card-header {
+        background: var(--chev-bg-light);
+        padding: 16px 28px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 1rem;
+        letter-spacing: 1px; text-transform: uppercase;
+        color: var(--chev-black);
+        border-bottom: 1px solid #eee;
+    }
+
+    .auth-card-body { padding: 32px 28px; }
+
+    .forgot-link {
+        font-size: 0.8rem; color: var(--chev-gold);
+        text-decoration: none;
+    }
+
+    .forgot-link:hover { text-decoration: underline; }
+
+    .auth-register-link { color: var(--chev-gold); text-decoration: none; font-weight: 600; }
+    .auth-register-link:hover { text-decoration: underline; }
+
+    .toggle-pass {
+        border-color: #dee2e6;
+        background: var(--chev-bg-light);
+        border-radius: 0;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function togglePassword(fieldId, btn) {
+        const field = document.getElementById(fieldId);
+        const icon = btn.querySelector('i');
+        if (field.type === 'password') {
+            field.type = 'text';
+            icon.className = 'bi bi-eye-slash';
+        } else {
+            field.type = 'password';
+            icon.className = 'bi bi-eye';
+        }
+    }
+</script>
+{% endblock %}

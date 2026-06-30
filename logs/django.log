@@ -1,0 +1,1226 @@
+[INFO] 2026-06-25 10:06:43,602 signals Yangi profil yaratildi: Zahon
+[INFO] 2026-06-25 10:07:42,581 signals Yangi profil yaratildi: ZAHON
+[INFO] 2026-06-25 10:08:01,659 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-25 10:08:23,934 basehttp "GET / HTTP/1.1" 200 45479
+[WARNING] 2026-06-25 10:08:27,001 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 10:08:27,004 basehttp "GET /favicon.ico HTTP/1.1" 404 5090
+[WARNING] 2026-06-25 10:08:27,047 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 10:08:27,056 basehttp "GET /favicon.ico HTTP/1.1" 404 5090
+[INFO] 2026-06-25 10:09:16,635 basehttp "GET /login/ HTTP/1.1" 200 30804
+[INFO] 2026-06-25 10:09:21,813 basehttp "GET / HTTP/1.1" 200 45479
+[INFO] 2026-06-25 10:09:26,121 basehttp "GET /login/ HTTP/1.1" 200 30804
+[INFO] 2026-06-25 10:09:34,522 basehttp "GET / HTTP/1.1" 200 45479
+[INFO] 2026-06-25 10:09:43,963 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:09:44,239 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4169
+[INFO] 2026-06-25 10:09:46,037 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[INFO] 2026-06-25 10:09:46,075 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+[INFO] 2026-06-25 10:09:46,283 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+[INFO] 2026-06-25 10:09:46,463 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+[INFO] 2026-06-25 10:09:46,496 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:09:46,512 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+[INFO] 2026-06-25 10:09:46,580 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4169
+[INFO] 2026-06-25 10:09:46,968 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[INFO] 2026-06-25 10:09:46,977 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+[INFO] 2026-06-25 10:09:53,478 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
+[INFO] 2026-06-25 10:10:04,667 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:10:04,811 basehttp "GET /admin/ HTTP/1.1" 200 8527
+[INFO] 2026-06-25 10:10:04,936 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[INFO] 2026-06-25 10:10:05,015 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO] 2026-06-25 10:10:05,187 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[INFO] 2026-06-25 10:10:12,904 basehttp "GET /admin/main/carbrand/add/ HTTP/1.1" 200 12713
+[INFO] 2026-06-25 10:10:13,119 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[INFO] 2026-06-25 10:10:13,217 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+[INFO] 2026-06-25 10:10:13,355 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[INFO] 2026-06-25 10:10:13,401 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+[INFO] 2026-06-25 10:10:13,529 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[INFO] 2026-06-25 10:10:13,534 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+[INFO] 2026-06-25 10:10:13,536 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+[INFO] 2026-06-25 10:10:13,631 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[INFO] 2026-06-25 10:10:13,634 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[INFO] 2026-06-25 10:10:13,685 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:10:13,727 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[INFO] 2026-06-25 10:10:13,836 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[INFO] 2026-06-25 10:10:13,879 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[INFO] 2026-06-25 10:11:44,408 basehttp "POST /admin/main/carbrand/add/ HTTP/1.1" 200 13074
+[INFO] 2026-06-25 10:11:44,812 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,814 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,814 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,816 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,870 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,966 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,978 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,981 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,986 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:44,995 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,052 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,069 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,085 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,116 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,278 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,332 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[WARNING] 2026-06-25 10:11:45,411 log Not Found: /media/maxresdefault.jpg
+[WARNING] 2026-06-25 10:11:45,442 basehttp "GET /media/maxresdefault.jpg HTTP/1.1" 404 5214
+[INFO] 2026-06-25 10:11:45,781 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,797 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:11:45,818 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:12:15,496 basehttp "POST /admin/main/carbrand/add/ HTTP/1.1" 200 13081
+[INFO] 2026-06-25 10:12:15,768 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[WARNING] 2026-06-25 10:12:15,832 log Not Found: /media/maxresdefault.jpg
+[WARNING] 2026-06-25 10:12:15,954 basehttp "GET /media/maxresdefault.jpg HTTP/1.1" 404 5214
+[INFO] 2026-06-25 10:12:34,627 basehttp "POST /admin/main/carbrand/add/ HTTP/1.1" 200 13138
+[INFO] 2026-06-25 10:12:35,015 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[WARNING] 2026-06-25 10:12:35,017 log Not Found: /media/maxresdefault.jpg
+[WARNING] 2026-06-25 10:12:35,029 basehttp "GET /media/maxresdefault.jpg HTTP/1.1" 404 5214
+[INFO] 2026-06-25 10:12:59,193 basehttp "POST /admin/main/carbrand/add/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:12:59,699 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[INFO] 2026-06-25 10:12:59,781 basehttp "GET /admin/main/carbrand/ HTTP/1.1" 200 12299
+[INFO] 2026-06-25 10:12:59,952 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:13:00,054 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+[INFO] 2026-06-25 10:13:00,085 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+[INFO] 2026-06-25 10:13:00,271 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[INFO] 2026-06-25 10:13:00,398 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[INFO] 2026-06-25 10:13:00,728 basehttp "GET /media/brands/maxresdefault.jpg HTTP/1.1" 200 186156
+[INFO] 2026-06-25 10:13:00,784 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[INFO] 2026-06-25 10:13:05,012 basehttp "GET / HTTP/1.1" 200 45754
+[ERROR] 2026-06-25 10:13:30,624 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-25 10:13:30,643 basehttp "GET /cars/?sort=featured HTTP/1.1" 500 283626
+[INFO] 2026-06-25 10:13:36,342 basehttp "GET /cars/chevrolet-malibu-2024/ HTTP/1.1" 200 39585
+[INFO] 2026-06-25 10:13:51,409 basehttp "GET / HTTP/1.1" 200 45754
+[INFO] 2026-06-25 10:13:52,107 basehttp "GET /admin/ HTTP/1.1" 200 8924
+[INFO] 2026-06-25 10:13:52,497 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,498 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,499 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,530 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,536 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,536 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,630 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,670 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:52,675 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:53,465 basehttp "GET /admin/ HTTP/1.1" 200 8924
+[INFO] 2026-06-25 10:13:57,843 basehttp "GET /admin/main/car/ HTTP/1.1" 200 19894
+[INFO] 2026-06-25 10:13:58,031 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,050 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,073 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,117 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,195 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,309 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,312 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,313 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,377 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,380 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:13:58,484 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:13:58,676 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[INFO] 2026-06-25 10:14:01,138 basehttp "GET /admin/main/car/3/change/ HTTP/1.1" 200 46653
+[INFO] 2026-06-25 10:14:01,548 basehttp "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+[INFO] 2026-06-25 10:14:01,559 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:14:01,600 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+[INFO] 2026-06-25 10:14:01,665 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:14:01,735 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:14:01,790 basehttp "GET /static/admin/img/tooltag-arrowright.svg HTTP/1.1" 200 280
+[INFO] 2026-06-25 10:14:01,885 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[INFO] 2026-06-25 10:14:02,064 basehttp "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+[DEBUG] 2026-06-25 10:14:17,280 models Rasm optimallashtirildi: C:\Users\username\Desktop\chevrolet_uz\media\cars\chevrolet-equinox-2024\car_chevrolet-equinox-2024_0.jpg
+[INFO] 2026-06-25 10:14:17,341 basehttp "POST /admin/main/car/3/change/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:14:17,560 basehttp "GET /admin/main/car/ HTTP/1.1" 200 20243
+[INFO] 2026-06-25 10:14:17,965 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:14:17,999 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 200 166061
+[INFO] 2026-06-25 10:14:23,203 basehttp "GET / HTTP/1.1" 200 45669
+[INFO] 2026-06-25 10:14:23,478 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:15:01,568 basehttp "GET /profile/ HTTP/1.1" 200 40421
+[INFO] 2026-06-25 10:15:01,896 basehttp "GET /static/images/default-avatar.svg HTTP/1.1" 200 283
+[INFO] 2026-06-25 10:15:44,911 basehttp "POST /profile/ HTTP/1.1" 200 41608
+[WARNING] 2026-06-25 10:15:45,262 log Not Found: /media/maxresdefault.jpg
+[WARNING] 2026-06-25 10:15:45,307 basehttp "GET /media/maxresdefault.jpg HTTP/1.1" 404 5214
+[ERROR] 2026-06-25 10:20:28,737 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-25 10:20:28,747 basehttp "GET /cars/ HTTP/1.1" 500 283272
+[INFO] 2026-06-25 10:20:33,613 basehttp "GET /news/ HTTP/1.1" 200 31818
+[INFO] 2026-06-25 10:20:43,377 basehttp "GET / HTTP/1.1" 200 45669
+[INFO] 2026-06-25 10:20:43,537 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,429 basehttp "GET /admin/ HTTP/1.1" 200 9289
+[INFO] 2026-06-25 10:20:44,808 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,809 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,835 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,835 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,859 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,862 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,869 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,902 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:44,911 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:46,225 basehttp "GET /admin/ HTTP/1.1" 200 9289
+[INFO] 2026-06-25 10:20:50,197 basehttp "GET /admin/main/news/add/ HTTP/1.1" 200 21435
+[INFO] 2026-06-25 10:20:50,375 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+[INFO] 2026-06-25 10:20:50,379 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,407 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+[INFO] 2026-06-25 10:20:50,410 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,420 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,464 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,465 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,465 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,469 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,488 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,500 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,501 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:20:50,543 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,655 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,738 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,768 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,858 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:20:50,994 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[INFO] 2026-06-25 10:20:51,011 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[DEBUG] 2026-06-25 10:21:57,997 models Rasm optimallashtirildi: C:\Users\username\Desktop\chevrolet_uz\media\news\2026\6\news_new.jpg
+[INFO] 2026-06-25 10:21:58,015 basehttp "POST /admin/main/news/add/ HTTP/1.1" 302 0
+[INFO] 2026-06-25 10:21:58,099 basehttp "GET /admin/main/news/ HTTP/1.1" 200 17237
+[INFO] 2026-06-25 10:21:58,257 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:21:58,285 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:21:58,319 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:21:58,329 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-06-25 10:21:58,403 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:21:58,406 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:21:58,474 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 200 133689
+[INFO] 2026-06-25 10:22:07,060 basehttp "GET / HTTP/1.1" 200 48038
+[INFO] 2026-06-25 10:22:07,230 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:22:07,239 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,016 basehttp "GET /admin/ HTTP/1.1" 200 9630
+[INFO] 2026-06-25 10:23:47,173 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,173 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,178 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,211 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,212 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,248 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,266 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,303 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:47,429 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:23:48,470 basehttp "GET /admin/ HTTP/1.1" 200 9630
+[INFO] 2026-06-25 10:58:02,887 basehttp "GET / HTTP/1.1" 200 48038
+[INFO] 2026-06-25 10:58:03,958 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 10:58:04,790 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:13,682 basehttp "GET /admin/ HTTP/1.1" 200 9630
+[INFO] 2026-06-25 11:00:14,110 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,143 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,154 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,174 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,205 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,209 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,382 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,453 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:14,454 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[INFO] 2026-06-25 11:00:15,052 basehttp "GET /admin/ HTTP/1.1" 200 9630
+[WARNING] 2026-06-25 14:33:12,422 log Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-25 14:33:12,451 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 14:33:12,693 basehttp "GET /apple-touch-icon.png HTTP/1.1" 404 5117
+[WARNING] 2026-06-25 14:33:12,710 basehttp "GET /favicon.ico HTTP/1.1" 404 5090
+[WARNING] 2026-06-25 15:53:23,806 log Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-25 15:53:23,896 basehttp "GET /apple-touch-icon.png HTTP/1.1" 404 5117
+[WARNING] 2026-06-25 15:53:25,593 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 15:53:25,624 basehttp "GET /favicon.ico HTTP/1.1" 404 5090
+[INFO] 2026-06-25 16:23:33,708 autoreload C:\Users\username\Desktop\chevrolet_uz\main\urls.py changed, reloading.
+[INFO] 2026-06-25 16:23:57,640 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-25 16:27:17,309 autoreload Watching for file changes with StatReloader
+[ERROR] 2026-06-25 16:27:53,084 log Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: main_herobanner
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 325, in render
+    if match:
+       ^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: main_herobanner
+[ERROR] 2026-06-25 16:27:53,134 basehttp "GET / HTTP/1.1" 500 206366
+[WARNING] 2026-06-25 16:27:54,940 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 16:27:54,954 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[WARNING] 2026-06-25 16:27:55,358 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 16:27:55,378 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[INFO] 2026-06-25 16:32:49,694 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-25 16:33:09,723 basehttp "GET / HTTP/1.1" 200 47113
+[INFO] 2026-06-25 16:33:11,444 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[INFO] 2026-06-25 16:33:11,467 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 304 0
+[WARNING] 2026-06-25 16:33:36,255 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-25 16:33:36,272 log Method Not Allowed: /logout/
+[WARNING] 2026-06-25 16:33:36,341 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-25 19:02:22,870 log Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-25 19:02:22,884 basehttp "GET /apple-touch-icon.png HTTP/1.1" 404 5290
+[WARNING] 2026-06-25 19:02:38,372 log Not Found: /favicon.ico
+[WARNING] 2026-06-25 19:02:38,381 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[WARNING] 2026-06-25 19:02:40,715 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-25 19:02:41,564 log Method Not Allowed: /logout/
+[WARNING] 2026-06-25 19:02:41,608 basehttp "GET /logout/ HTTP/1.1" 405 0
+[INFO] 2026-06-29 16:04:33,654 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:04:55,589 basehttp "GET / HTTP/1.1" 200 47113
+[INFO] 2026-06-29 16:04:59,821 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 200 166061
+[WARNING] 2026-06-29 16:05:03,190 log Not Found: /favicon.ico
+[WARNING] 2026-06-29 16:05:03,263 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[WARNING] 2026-06-29 16:05:03,289 log Not Found: /favicon.ico
+[WARNING] 2026-06-29 16:05:03,321 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[INFO] 2026-06-29 16:05:06,701 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 200 133689
+[ERROR] 2026-06-29 16:05:08,856 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-29 16:05:08,926 basehttp "GET /cars/?sort=featured HTTP/1.1" 500 283625
+[ERROR] 2026-06-29 16:05:16,087 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\Desktop\chevrolet_uz\venv\Lib\site-packages\django\template\base.py", line 555, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-29 16:05:16,245 basehttp "GET /cars/?sort=featured HTTP/1.1" 500 283625
+[INFO] 2026-06-29 16:15:01,196 autoreload Watching for file changes with StatReloader
+[ERROR] 2026-06-29 16:15:25,180 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-29 16:15:25,235 basehttp "GET /cars/?category=crossover HTTP/1.1" 500 286186
+[ERROR] 2026-06-29 16:16:20,631 log Internal Server Error: /cars/
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 511, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'url_replace'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 197, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 519, in parse
+    raise self.error(token, e)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 517, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 513, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 277: 'url_replace', expected 'elif','else' or 'endif'. Did you forget to register or load this tag?
+[ERROR] 2026-06-29 16:16:20,651 basehttp "GET /cars/ HTTP/1.1" 500 282736
+[INFO] 2026-06-29 16:16:50,260 basehttp "GET /register/ HTTP/1.1" 200 32969
+[INFO] 2026-06-29 16:19:27,460 basehttp "GET /register/ HTTP/1.1" 200 32969
+[INFO] 2026-06-29 16:19:51,361 basehttp "GET / HTTP/1.1" 200 47114
+[INFO] 2026-06-29 16:22:06,521 autoreload C:\Users\username\Desktop\chevrolet_uz\chevrolet_uz\settings.py changed, reloading.
+[INFO] 2026-06-29 16:22:12,162 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:22:29,735 basehttp "GET /cars/ HTTP/1.1" 200 49139
+[INFO] 2026-06-29 16:30:10,011 basehttp "GET /register/ HTTP/1.1" 200 32969
+[INFO] 2026-06-29 16:31:04,266 basehttp "GET /cars/chevrolet-tracker-2024/ HTTP/1.1" 200 40961
+[INFO] 2026-06-29 16:31:44,825 basehttp "GET /login/ HTTP/1.1" 200 31055
+[ERROR] 2026-06-29 16:32:17,044 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:17,259 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:17,581 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:17,759 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:18,063 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:18,226 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:32:18,473 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:25,762 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:25,907 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:25,978 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:26,119 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:26,254 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:26,413 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[ERROR] 2026-06-29 16:33:26,562 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[WARNING] 2026-06-29 16:34:08,013 log Method Not Allowed (GET): /logout/
+[INFO] 2026-06-29 16:36:42,739 autoreload C:\Users\username\Desktop\chevrolet_uz\chevrolet_uz\settings.py changed, reloading.
+[INFO] 2026-06-29 16:36:48,127 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:39:08,432 basehttp "GET /cars/ HTTP/1.1" 200 49139
+[INFO] 2026-06-29 16:39:09,514 basehttp - Broken pipe from ('127.0.0.1', 59707)
+[INFO] 2026-06-29 16:42:54,291 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:42:57,756 basehttp "GET /cars/?sort=featured HTTP/1.1" 200 49229
+[INFO] 2026-06-29 16:43:18,213 basehttp "GET /news/ HTTP/1.1" 200 33142
+[INFO] 2026-06-29 16:43:26,124 basehttp "GET /news/feeee/ HTTP/1.1" 200 31891
+[INFO] 2026-06-29 16:44:11,780 basehttp "GET / HTTP/1.1" 200 47113
+[INFO] 2026-06-29 16:44:13,076 basehttp "GET /admin HTTP/1.1" 301 0
+[INFO] 2026-06-29 16:44:13,910 basehttp "GET /admin/ HTTP/1.1" 200 10078
+[INFO] 2026-06-29 16:44:14,392 basehttp "GET /admin/ HTTP/1.1" 200 10078
+[INFO] 2026-06-29 16:44:15,534 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+[INFO] 2026-06-29 16:44:15,597 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+[INFO] 2026-06-29 16:44:15,841 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[INFO] 2026-06-29 16:44:15,842 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[INFO] 2026-06-29 16:44:15,883 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+[INFO] 2026-06-29 16:44:16,015 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[INFO] 2026-06-29 16:44:16,021 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+[INFO] 2026-06-29 16:44:16,228 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO] 2026-06-29 16:44:16,234 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[WARNING] 2026-06-29 16:44:48,319 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:44:48,323 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:44:48,330 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-29 16:44:55,026 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:44:55,027 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:44:55,029 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-29 16:44:56,531 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:44:56,532 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:44:56,534 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-29 16:44:57,577 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:44:57,578 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:44:57,579 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-29 16:46:04,198 log Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:47:25,825 log Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:48:08,425 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:48:08,426 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:48:08,427 basehttp "GET /logout/ HTTP/1.1" 405 0
+[WARNING] 2026-06-29 16:48:13,132 base Method Not Allowed (GET): /logout/
+[WARNING] 2026-06-29 16:48:13,134 log Method Not Allowed: /logout/
+[WARNING] 2026-06-29 16:48:13,136 basehttp "GET /logout/ HTTP/1.1" 405 0
+[INFO] 2026-06-29 16:48:21,253 basehttp "GET / HTTP/1.1" 200 47392
+[INFO] 2026-06-29 16:48:26,878 basehttp "POST /logout/ HTTP/1.1" 302 0
+[INFO] 2026-06-29 16:48:27,011 basehttp "GET / HTTP/1.1" 200 47114
+[INFO] 2026-06-29 16:48:35,347 basehttp "GET /register/ HTTP/1.1" 200 32969
+[INFO] 2026-06-29 16:48:59,548 basehttp "POST /register/ HTTP/1.1" 200 33961
+[INFO] 2026-06-29 16:49:28,871 signals Yangi profil yaratildi: fer
+[INFO] 2026-06-29 16:49:28,939 views Yangi foydalanuvchi ro'yxatdan o'tdi: fer
+[INFO] 2026-06-29 16:49:28,968 basehttp "POST /register/ HTTP/1.1" 302 0
+[INFO] 2026-06-29 16:49:29,277 basehttp - Broken pipe from ('127.0.0.1', 53053)
+[WARNING] 2026-06-29 16:49:29,322 log Forbidden (CSRF token from POST incorrect.): /register/
+[WARNING] 2026-06-29 16:49:29,324 basehttp "POST /register/ HTTP/1.1" 403 2532
+[ERROR] 2026-06-29 16:51:11,020 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[INFO] 2026-06-29 16:51:39,721 autoreload C:\Users\username\Desktop\chevrolet_uz\chevrolet_uz\settings.py changed, reloading.
+[INFO] 2026-06-29 16:51:47,633 autoreload Watching for file changes with StatReloader
+[ERROR] 2026-06-29 16:53:06,693 log Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\username\AppData\Roaming\Python\Python312\site-packages\django\http\request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+[INFO] 2026-06-29 16:56:55,839 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:57:53,517 basehttp "GET / HTTP/1.1" 200 47114
+[INFO] 2026-06-29 16:58:51,050 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 16:59:37,551 basehttp "GET / HTTP/1.1" 200 47114
+[WARNING] 2026-06-29 17:00:00,396 log Forbidden (CSRF token from POST incorrect.): /register/
+[WARNING] 2026-06-29 17:00:00,416 basehttp "POST /register/ HTTP/1.1" 403 2532
+[INFO] 2026-06-29 17:05:47,842 basehttp "GET / HTTP/1.1" 200 47114
+[INFO] 2026-06-29 17:06:41,929 basehttp "HEAD / HTTP/1.1" 200 0
+[INFO] 2026-06-29 17:23:34,717 basehttp "GET / HTTP/1.1" 200 47719
+[INFO] 2026-06-29 21:12:38,030 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 21:17:49,640 autoreload Watching for file changes with StatReloader
+[INFO] 2026-06-29 21:17:56,220 basehttp "GET / HTTP/1.1" 200 47391
+[WARNING] 2026-06-29 21:17:57,773 log Not Found: /favicon.ico
+[WARNING] 2026-06-29 21:17:57,784 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[WARNING] 2026-06-29 21:17:57,899 log Not Found: /favicon.ico
+[WARNING] 2026-06-29 21:17:57,938 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[INFO] 2026-06-29 21:19:10,083 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-06-29 21:19:10,390 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+[INFO] 2026-06-29 21:19:11,609 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+[INFO] 2026-06-29 21:19:14,821 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-06-29 21:19:15,023 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+[INFO] 2026-06-29 21:19:20,253 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3897
+[INFO] 2026-06-29 21:19:27,789 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3897
+[INFO] 2026-06-29 21:19:31,714 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3897
+[INFO] 2026-06-29 21:19:43,356 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3897
+[INFO] 2026-06-29 21:28:07,898 signals Yangi profil yaratildi: ZAHOn
+[INFO] 2026-06-29 21:28:52,070 autoreload C:\Users\username\Desktop\chevrolet_uz\chevrolet_uz\settings.py changed, reloading.
+[INFO] 2026-06-29 21:28:56,576 autoreload Watching for file changes with StatReloader
+[WARNING] 2026-06-29 22:11:01,533 log Not Found: /apple-touch-icon.png
+[WARNING] 2026-06-29 22:11:01,681 basehttp "GET /apple-touch-icon.png HTTP/1.1" 404 5290
+[WARNING] 2026-06-29 22:11:05,884 log Not Found: /favicon.ico
+[WARNING] 2026-06-29 22:11:05,952 basehttp "GET /favicon.ico HTTP/1.1" 404 5263

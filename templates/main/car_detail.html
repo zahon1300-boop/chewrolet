@@ -1,0 +1,484 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}{{ car.name }} ({{ car.model_year }}){% endblock %}
+{% block meta_description %}{{ car.short_description|default:car.name }} - Chevrolet UZ{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================
+     SAHIFA SARLAVHASI
+     ============================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb breadcrumb-dark">
+                <li class="breadcrumb-item"><a href="{% url 'main:home' %}">Bosh sahifa</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'main:car_list' %}">Avtomobillar</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ car.name }}</li>
+            </ol>
+        </nav>
+        <span class="page-hero-eyebrow">{{ car.brand.name }}</span>
+        <h1>{{ car.name }}</h1>
+        <div class="d-flex align-items-center gap-3 mt-2" style="color:rgba(245,245,240,0.6); font-size:0.85rem;">
+            <span><i class="bi bi-calendar3 me-1"></i>{{ car.model_year }}</span>
+            <span><i class="bi bi-eye me-1"></i>{{ car.views_count|intcomma }} ko'rishlar</span>
+            {% if car.category %}
+            <span><i class="bi bi-tag me-1"></i>{{ car.category.name }}</span>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     ASOSIY KONTENT: GALEREYA + MA'LUMOTLAR
+     ============================================================ -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- CHAP: Rasm Galereyasi -->
+            <div class="col-lg-7">
+                <!-- Asosiy rasm -->
+                <div class="gallery-main mb-3">
+                    {% with gallery_images.first as main_img %}
+                    {% if main_img %}
+                    <a href="{{ main_img.image.url }}" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                       onclick="openGallery(0)" class="d-block">
+                        <img src="{{ main_img.image.url }}"
+                             alt="{{ main_img.alt_text|default:car.name }}"
+                             id="gallery-main-img"
+                             class="img-fluid w-100">
+                    </a>
+                    {% else %}
+                    <div class="gallery-placeholder d-flex align-items-center justify-content-center">
+                        <i class="bi bi-car-front" style="font-size:5rem; color:#ccc;"></i>
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+                <!-- Thumbnail lentasi -->
+                {% if gallery_images.count > 1 %}
+                <div class="gallery-thumbs d-flex gap-2 flex-wrap">
+                    {% for img in gallery_images %}
+                    <button class="gallery-thumb-btn {% if forloop.first %}active{% endif %}"
+                            onclick="changeMainImg('{{ img.image.url }}', {{ forloop.counter0 }}, this)"
+                            aria-label="{{ img.alt_text|default:forloop.counter }} - rasm">
+                        <img src="{{ img.image.url }}" alt="{{ img.alt_text }}" loading="lazy">
+                    </button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Tavsif -->
+                {% if car.full_description %}
+                <div class="car-description mt-4">
+                    <h3 class="detail-section-title">Batafsil tavsif</h3>
+                    <div class="detail-section-divider"></div>
+                    <p class="text-muted" style="line-height:1.8;">{{ car.full_description }}</p>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- O'NG: Narx va texnik xarakteristikalar -->
+            <div class="col-lg-5">
+                <div class="car-info-panel">
+
+                    <!-- Narx -->
+                    <div class="price-block mb-4">
+                        <div class="price-label">Narxi</div>
+                        <div class="price-main">{{ car.price_formatted }}</div>
+                        {% if car.price_uzs %}
+                        <div class="price-secondary">≈ {{ car.price_uzs|intcomma }} so'm</div>
+                        {% endif %}
+                        {% if car.is_price_negotiable %}
+                        <span class="badge bg-success mt-1">Narx kelishiladi</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Asosiy xarakteristikalar -->
+                    <div class="spec-grid mb-4">
+                        {% if car.engine_power_hp %}
+                        <div class="spec-item">
+                            <i class="bi bi-lightning-charge-fill spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.engine_power_hp }} ot kuchi</div>
+                                <div class="spec-label">Quvvat</div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        {% if car.engine_volume %}
+                        <div class="spec-item">
+                            <i class="bi bi-engine spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.engine_volume }} L</div>
+                                <div class="spec-label">Dvigatel</div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="spec-item">
+                            <i class="bi bi-gear-wide-connected spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.get_transmission_display }}</div>
+                                <div class="spec-label">Uzatmalar qutisi</div>
+                            </div>
+                        </div>
+
+                        <div class="spec-item">
+                            <i class="bi bi-fuel-pump spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.get_fuel_type_display }}</div>
+                                <div class="spec-label">Yoqilg'i</div>
+                            </div>
+                        </div>
+
+                        {% if car.acceleration_0_100 %}
+                        <div class="spec-item">
+                            <i class="bi bi-speedometer2 spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.acceleration_0_100 }} sek</div>
+                                <div class="spec-label">0-100 km/s</div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class="spec-item">
+                            <i class="bi bi-arrows-move spec-icon"></i>
+                            <div>
+                                <div class="spec-value">{{ car.get_drive_type_display }}</div>
+                                <div class="spec-label">Yurish turi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batafsil xarakteristikalar (accordion) -->
+                    <div class="accordion mb-4" id="specAccordion">
+
+                        <!-- O'lchamlar -->
+                        {% if car.length_mm or car.width_mm or car.height_mm %}
+                        <div class="accordion-item spec-accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed spec-acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#dimCollapse">
+                                    <i class="bi bi-rulers me-2"></i> O'lchamlar
+                                </button>
+                            </h2>
+                            <div id="dimCollapse" class="accordion-collapse collapse" data-bs-parent="#specAccordion">
+                                <div class="accordion-body p-0">
+                                    <table class="spec-table">
+                                        {% if car.length_mm %}
+                                        <tr><td>Uzunlik</td><td>{{ car.length_mm }} mm</td></tr>
+                                        {% endif %}
+                                        {% if car.width_mm %}
+                                        <tr><td>Kengligi</td><td>{{ car.width_mm }} mm</td></tr>
+                                        {% endif %}
+                                        {% if car.height_mm %}
+                                        <tr><td>Balandligi</td><td>{{ car.height_mm }} mm</td></tr>
+                                        {% endif %}
+                                        {% if car.wheelbase_mm %}
+                                        <tr><td>G'ildiraklar oralig'i</td><td>{{ car.wheelbase_mm }} mm</td></tr>
+                                        {% endif %}
+                                        {% if car.curb_weight_kg %}
+                                        <tr><td>Og'irligi</td><td>{{ car.curb_weight_kg }} kg</td></tr>
+                                        {% endif %}
+                                        {% if car.trunk_volume_l %}
+                                        <tr><td>Bagaj hajmi</td><td>{{ car.trunk_volume_l }} L</td></tr>
+                                        {% endif %}
+                                        {% if car.fuel_tank_l %}
+                                        <tr><td>Yoqilg'i baki</td><td>{{ car.fuel_tank_l }} L</td></tr>
+                                        {% endif %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Yoqilg'i sarfi -->
+                        {% if car.fuel_consumption_city or car.fuel_consumption_highway %}
+                        <div class="accordion-item spec-accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed spec-acc-btn" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#fuelCollapse">
+                                    <i class="bi bi-droplet me-2"></i> Yoqilg'i sarfi
+                                </button>
+                            </h2>
+                            <div id="fuelCollapse" class="accordion-collapse collapse" data-bs-parent="#specAccordion">
+                                <div class="accordion-body p-0">
+                                    <table class="spec-table">
+                                        {% if car.fuel_consumption_city %}
+                                        <tr><td>Shahar</td><td>{{ car.fuel_consumption_city }} L/100km</td></tr>
+                                        {% endif %}
+                                        {% if car.fuel_consumption_highway %}
+                                        <tr><td>Magistral</td><td>{{ car.fuel_consumption_highway }} L/100km</td></tr>
+                                        {% endif %}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Harakat tugmalari -->
+                    <div class="action-buttons">
+                        <a href="tel:+998712345678" class="btn-chevrolet w-100 d-block text-center mb-3">
+                            <i class="bi bi-telephone me-2"></i>Qo'ng'iroq qilish
+                        </a>
+                        <a href="https://t.me/chevrolet_uz" target="_blank" rel="noopener"
+                           class="btn-chev-outline w-100 d-block text-center">
+                            <i class="bi bi-telegram me-2"></i>Telegram orqali so'rash
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     O'XSHASH AVTOMOBILLAR
+     ============================================================ -->
+{% if related_cars %}
+<section class="py-5 bg-white">
+    <div class="container">
+        <span class="section-eyebrow">O'xshash modellar</span>
+        <h2 class="section-title mb-0">Sizga Ham Yoqishi Mumkin</h2>
+        <div class="section-divider"></div>
+
+        <div class="row g-4">
+            {% for related in related_cars %}
+            <div class="col-sm-6 col-lg-3">
+                <article class="car-card h-100">
+                    <a href="{{ related.get_absolute_url }}" class="d-block car-card-img-wrapper text-decoration-none">
+                        {% with related.main_image as img %}
+                        {% if img %}
+                            <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:related.name }}" loading="lazy">
+                        {% else %}
+                            <div class="d-flex align-items-center justify-content-center h-100 bg-light">
+                                <i class="bi bi-car-front" style="font-size:2.5rem; color:#ccc;"></i>
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                    </a>
+                    <div class="car-card-body">
+                        <div class="car-card-brand">{{ related.brand.name }}</div>
+                        <h3 class="car-card-name">
+                            <a href="{{ related.get_absolute_url }}" class="text-decoration-none text-dark">
+                                {{ related.name }}
+                            </a>
+                        </h3>
+                        <p class="car-card-price">{{ related.price_formatted }}</p>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ============================================================
+     GALEREYA MODALI
+     ============================================================ -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-label="Galereya">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white">{{ car.name }} — Galereya</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-2">
+                <img id="modal-gallery-img" src="" alt="{{ car.name }}"
+                     class="img-fluid w-100" style="max-height:75vh; object-fit:contain;">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ===== GALEREYA ===== */
+    .gallery-main {
+        overflow: hidden;
+        background: #f0f0ee;
+        aspect-ratio: 16/10;
+    }
+
+    .gallery-main img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        cursor: zoom-in;
+        transition: transform 0.4s ease;
+    }
+
+    .gallery-main:hover img { transform: scale(1.02); }
+
+    .gallery-placeholder {
+        background: #f0f0ee;
+        aspect-ratio: 16/10;
+    }
+
+    .gallery-thumb-btn {
+        width: 80px; height: 56px;
+        padding: 0; border: 2px solid transparent;
+        overflow: hidden; background: none;
+        cursor: pointer; transition: var(--transition);
+        flex-shrink: 0;
+    }
+
+    .gallery-thumb-btn img {
+        width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .gallery-thumb-btn.active,
+    .gallery-thumb-btn:hover {
+        border-color: var(--chev-gold);
+    }
+
+    /* ===== MA'LUMOTLAR PANELI ===== */
+    .car-info-panel {
+        background: #fff;
+        border: 1px solid #e9e9e7;
+        padding: 32px;
+        position: sticky;
+        top: 80px;
+    }
+
+    .price-block {
+        border-bottom: 2px solid var(--chev-bg-light);
+        padding-bottom: 24px;
+    }
+
+    .price-label {
+        font-size: 0.75rem; font-weight: 700;
+        letter-spacing: 2px; text-transform: uppercase;
+        color: var(--chev-text-muted); margin-bottom: 4px;
+    }
+
+    .price-main {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 900; font-size: 2.4rem;
+        color: var(--chev-red); line-height: 1;
+    }
+
+    .price-secondary {
+        font-size: 0.9rem; color: var(--chev-text-muted); margin-top: 4px;
+    }
+
+    /* ===== SPEC GRID ===== */
+    .spec-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .spec-item {
+        display: flex; align-items: flex-start; gap: 10px;
+        padding: 12px;
+        background: var(--chev-bg-light);
+        border-left: 3px solid var(--chev-gold);
+    }
+
+    .spec-icon {
+        color: var(--chev-gold);
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .spec-value {
+        font-weight: 700; font-size: 0.9rem;
+        color: var(--chev-black); line-height: 1.2;
+    }
+
+    .spec-label {
+        font-size: 0.72rem; color: var(--chev-text-muted);
+        text-transform: uppercase; letter-spacing: 0.5px;
+        margin-top: 2px;
+    }
+
+    /* ===== ACCORDION ===== */
+    .spec-accordion-item {
+        border: 1px solid #eee;
+        border-radius: 0 !important;
+        margin-bottom: 4px;
+    }
+
+    .spec-acc-btn {
+        font-size: 0.85rem; font-weight: 600;
+        background: var(--chev-bg-light);
+        border-radius: 0 !important;
+        padding: 12px 16px;
+    }
+
+    .spec-acc-btn:not(.collapsed) {
+        background: var(--chev-gold);
+        color: var(--chev-black);
+        box-shadow: none;
+    }
+
+    .spec-acc-btn:not(.collapsed)::after {
+        filter: invert(1);
+    }
+
+    .spec-table {
+        width: 100%; font-size: 0.85rem; border-collapse: collapse;
+    }
+
+    .spec-table tr { border-bottom: 1px solid #f0f0ee; }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table td { padding: 8px 16px; }
+    .spec-table td:first-child { color: var(--chev-text-muted); width: 55%; }
+    .spec-table td:last-child { font-weight: 600; }
+
+    /* ===== BATAFSIL BO'LIM ===== */
+    .detail-section-title {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 1.3rem;
+    }
+
+    .detail-section-divider {
+        width: 40px; height: 2px;
+        background: var(--chev-gold);
+        margin-bottom: 16px;
+    }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb-dark .breadcrumb-item a { color: rgba(245,245,240,0.6); }
+    .breadcrumb-dark .breadcrumb-item.active { color: var(--chev-gold); }
+    .breadcrumb-dark .breadcrumb-item + .breadcrumb-item::before { color: rgba(245,245,240,0.4); }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const galleryImages = [
+        {% for img in gallery_images %}
+        { src: "{{ img.image.url }}", alt: "{{ img.alt_text|default:car.name }}" },
+        {% endfor %}
+    ];
+
+    let currentIdx = 0;
+
+    function changeMainImg(src, idx, btn) {
+        document.getElementById('gallery-main-img').src = src;
+        currentIdx = idx;
+        document.querySelectorAll('.gallery-thumb-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    function openGallery(idx) {
+        currentIdx = idx;
+        if (galleryImages[idx]) {
+            document.getElementById('modal-gallery-img').src = galleryImages[idx].src;
+        }
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,76 @@
+╔══════════════════════════════════════════════════════════════════╗
+║         CHEVROLET UZ — ISHGA TUSHIRISH YO'RIQNOMASI             ║
+║         Faqat 3 ta buyruq yetarli!                               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+MUHIM: db.sqlite3 fayli allaqachon tayyor!
+       migrate qilish SHART EMAS!
+       Admin ham yaratilgan!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1-QADAM: Virtual muhit yaratish va faollashtirish
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  PowerShell da papkaga kiring:
+    cd C:\...\chevrolet_uz
+
+  Virtual muhit yarating (BIR MARTA):
+    python -m venv venv
+
+  Faollashtiring (HAR SAFAR):
+    venv\Scripts\activate
+
+  (venv) so'zi chiqsa — tayyor!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2-QADAM: Paketlarni o'rnatish (BIR MARTA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    pip install -r requirements.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3-QADAM: Serverni ishga tushirish
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    python manage.py runserver
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  SAYTNI OCHISH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Brauzerda oching:
+
+  Bosh sahifa:       http://127.0.0.1:8000/
+  Admin panel:       http://127.0.0.1:8000/admin/
+  Kirish:            http://127.0.0.1:8000/login/
+  Royxatdan otish:   http://127.0.0.1:8000/register/
+  Mashinalar:        http://127.0.0.1:8000/cars/
+  Yangiliklar:       http://127.0.0.1:8000/news/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ADMIN KIRISH MA'LUMOTLARI (allaqachon yaratilgan)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Login:    admin
+  Parol:    Admin1234!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ADMIN PANELDA BANNER QO'SHISH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. http://127.0.0.1:8000/admin/ ga kiring
+  2. admin / Admin1234! bilan kiring
+  3. "Hero Bannerlar" -> "+ Qo'shish" bosing
+  4. Rasm yuklang (1920x900 tavsiya)
+  5. Sarlavha yozing
+  6. "Faol" belgilang
+  7. Saqlang -> Bosh sahifada ko'rinadi!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  XATO CHIQSA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  "No module named django" => pip install -r requirements.txt
+  "no such table"          => python manage.py migrate
+  "(venv) chiqmayapti"     => venv\Scripts\activate
+

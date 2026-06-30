@@ -1,0 +1,584 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}Bosh sahifa{% endblock %}
+{% block meta_description %}Chevrolet O'zbekiston — eng zamonaviy avtomobillar, ishonchli xizmat va qulay narxlar.{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO BANNER (Admin orqali boshqariladi)
+     ============================================================ -->
+{% if hero_banners %}
+<section class="hero-section" aria-label="Asosiy banner">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5500">
+
+        <!-- Indikatorlar -->
+        {% if hero_banners|length > 1 %}
+        <div class="carousel-indicators">
+            {% for banner in hero_banners %}
+            <button type="button" data-bs-target="#heroCarousel"
+                    data-bs-slide-to="{{ forloop.counter0 }}"
+                    {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                    aria-label="{{ banner.title }}">
+            </button>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="carousel-inner">
+            {% for banner in hero_banners %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <!-- Fon rasmi -->
+                <img src="{{ banner.image.url }}"
+                     class="hero-bg-img"
+                     alt="{{ banner.title }}"
+                     loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+
+                <!-- Qoraytirgich qatlam -->
+                <div class="hero-overlay"></div>
+
+                <!-- Kontent -->
+                <div class="hero-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-xl-7">
+                                <div class="hero-inner" data-bs-animate="fadeInUp">
+                                    <span class="hero-eyebrow">Chevrolet O'zbekiston</span>
+                                    <h1 class="hero-title">{{ banner.title }}</h1>
+                                    {% if banner.subtitle %}
+                                    <p class="hero-subtitle">{{ banner.subtitle }}</p>
+                                    {% endif %}
+                                    {% if banner.button_text and banner.button_url %}
+                                    <div class="hero-actions mt-4">
+                                        <a href="{{ banner.button_url }}" class="btn-chevrolet hero-btn">
+                                            {{ banner.button_text }}
+                                            <i class="bi bi-arrow-right ms-2"></i>
+                                        </a>
+                                        <a href="{% url 'main:car_list' %}" class="btn-chev-outline hero-btn-outline ms-3">
+                                            Barcha modellar
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- O'tish tugmalari -->
+        {% if hero_banners|length > 1 %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <div class="carousel-ctrl-btn"><i class="bi bi-chevron-left"></i></div>
+            <span class="visually-hidden">Oldingi</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <div class="carousel-ctrl-btn"><i class="bi bi-chevron-right"></i></div>
+            <span class="visually-hidden">Keyingi</span>
+        </button>
+        {% endif %}
+    </div>
+
+    <!-- Scroll down ko'rsatgich -->
+    <div class="hero-scroll-hint">
+        <i class="bi bi-chevron-double-down"></i>
+    </div>
+</section>
+
+{% else %}
+<!-- Banner yo'q bo'lganda statik hero -->
+<section class="static-hero">
+    <div class="static-hero-overlay"></div>
+    <div class="container position-relative" style="z-index:2;">
+        <div class="row align-items-center" style="min-height:80vh;">
+            <div class="col-lg-7">
+                <span class="hero-eyebrow">Chevrolet O'zbekiston</span>
+                <h1 class="hero-title">YANGI AVLOD<br>AVTOMOBILLAR</h1>
+                <p class="hero-subtitle">Texnologiya va qulay hayot uyg'unligi.</p>
+                <div class="hero-actions mt-4">
+                    <a href="{% url 'main:car_list' %}" class="btn-chevrolet hero-btn">
+                        Modellarni ko'rish <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll-hint"><i class="bi bi-chevron-double-down"></i></div>
+</section>
+{% endif %}
+
+
+<!-- ============================================================
+     KATEGORIYALAR TASMA (Quick nav)
+     ============================================================ -->
+{% if categories %}
+<section class="categories-bar py-3 bg-white border-bottom">
+    <div class="container">
+        <div class="d-flex gap-2 flex-wrap align-items-center">
+            <span class="cat-bar-label">Model turi:</span>
+            <a href="{% url 'main:car_list' %}" class="cat-pill cat-pill-all">
+                <i class="bi bi-grid-3x3 me-1"></i>Barchasi
+            </a>
+            {% for cat in categories %}
+            <a href="{% url 'main:car_list' %}?category={{ cat.slug }}" class="cat-pill">
+                {% if cat.icon_class %}<i class="bi {{ cat.icon_class }} me-1"></i>{% endif %}
+                {{ cat.name }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- ============================================================
+     TAVSIYA ETILGAN AVTOMOBILLAR
+     ============================================================ -->
+{% if featured_cars %}
+<section class="py-5 py-lg-6" id="featured-cars">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <span class="section-eyebrow">Tanlov</span>
+                <h2 class="section-title mb-0">Tavsiya Etilgan<br>Modellar</h2>
+                <div class="section-divider"></div>
+            </div>
+            <a href="{% url 'main:car_list' %}?sort=featured" class="btn-chev-outline d-none d-md-inline-block">
+                Barchasini ko'rish <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for car in featured_cars %}
+            <div class="col-sm-6 col-lg-4">
+                <article class="car-card h-100">
+                    <a href="{{ car.get_absolute_url }}" class="d-block car-card-img-wrapper text-decoration-none">
+                        {% with car.main_image as img %}
+                        {% if img %}
+                            <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:car.name }}" loading="lazy">
+                        {% else %}
+                            <div class="d-flex align-items-center justify-content-center h-100 bg-light">
+                                <i class="bi bi-car-front" style="font-size:3rem; color:#ccc;"></i>
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                        {% if car.is_new %}
+                        <span class="car-card-badge">Yangi</span>
+                        {% endif %}
+                    </a>
+                    <div class="car-card-body">
+                        <div class="car-card-brand">{{ car.brand.name }}</div>
+                        <h3 class="car-card-name">
+                            <a href="{{ car.get_absolute_url }}" class="text-decoration-none text-dark">
+                                {{ car.name }}
+                            </a>
+                        </h3>
+                        <div class="mb-3">
+                            {% if car.engine_power_hp %}
+                            <span class="car-spec-pill">
+                                <i class="bi bi-lightning-charge"></i>{{ car.engine_power_hp }} ot kuchi
+                            </span>
+                            {% endif %}
+                            <span class="car-spec-pill">
+                                <i class="bi bi-gear"></i>{{ car.get_transmission_display }}
+                            </span>
+                            <span class="car-spec-pill">
+                                <i class="bi bi-fuel-pump"></i>{{ car.get_fuel_type_display }}
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="car-card-price mb-0">{{ car.price_formatted }}</p>
+                            <a href="{{ car.get_absolute_url }}" class="btn-chev-outline py-1 px-3"
+                               style="font-size:0.8rem;">Ko'rish</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-4 d-md-none">
+            <a href="{% url 'main:car_list' %}" class="btn-chevrolet">
+                Barcha avtomobillar <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- ============================================================
+     STATISTIKA PANELI
+     ============================================================ -->
+<section class="stats-section py-5">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Model</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Mamnun mijoz</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Diler markazi</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-item">
+                    <div class="stat-number">5★</div>
+                    <div class="stat-label">Xizmat sifati</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     SO'NGGI YANGILIKLAR
+     ============================================================ -->
+{% if latest_news %}
+<section class="py-5 bg-white" id="latest-news">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <span class="section-eyebrow">So'nggi</span>
+                <h2 class="section-title mb-0">Yangiliklar</h2>
+                <div class="section-divider"></div>
+            </div>
+            <a href="{% url 'main:news_list' %}" class="btn-chev-outline d-none d-md-inline-block">
+                Barcha yangiliklar <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for news in latest_news %}
+            <div class="col-md-6 col-lg-3">
+                <article class="news-card h-100">
+                    {% if news.cover_image %}
+                    <a href="{{ news.get_absolute_url }}" class="d-block news-card-img">
+                        <img src="{{ news.cover_image.url }}" alt="{{ news.title }}" loading="lazy" class="img-fluid">
+                    </a>
+                    {% endif %}
+                    <div class="news-card-body">
+                        {% if news.category %}
+                        <span class="news-category-tag">{{ news.category.name }}</span>
+                        {% endif %}
+                        <h3 class="news-card-title">
+                            <a href="{{ news.get_absolute_url }}">{{ news.title|truncatechars:70 }}</a>
+                        </h3>
+                        <div class="news-meta">
+                            <span><i class="bi bi-calendar3"></i> {{ news.published_at|date:"d.m.Y" }}</span>
+                            <span><i class="bi bi-eye"></i> {{ news.views_count|intcomma }}</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- ============================================================
+     CTA — MUROJAAT
+     ============================================================ -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="cta-inner text-center">
+            <span class="section-eyebrow">Test haydash</span>
+            <h2 class="cta-title">Bugun Sinab Ko'ring</h2>
+            <p class="cta-text">
+                Diler markazlarimizda istalgan modelni bepul test haydash imkoniyatidan foydalaning.
+            </p>
+            <a href="tel:+998712345678" class="btn-chevrolet me-3">
+                <i class="bi bi-telephone me-2"></i>Qo'ng'iroq qilish
+            </a>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'main:register' %}" class="btn-chev-outline">
+                <i class="bi bi-person-plus me-1"></i>Ro'yxatdan o'tish
+            </a>
+            {% else %}
+            <a href="{% url 'main:car_list' %}" class="btn-chev-outline">
+                Modellarni ko'rish
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ===== HERO SECTION ===== */
+    .hero-section { position: relative; overflow: hidden; }
+
+    .carousel-item {
+        height: 85vh;
+        min-height: 520px;
+        max-height: 900px;
+    }
+
+    .hero-bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .hero-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(
+            105deg,
+            rgba(13,13,13,0.85) 0%,
+            rgba(13,13,13,0.5) 50%,
+            rgba(13,13,13,0.15) 100%
+        );
+    }
+
+    .hero-content {
+        position: absolute; inset: 0;
+        display: flex; align-items: center;
+        padding: 0;
+    }
+
+    .hero-inner { animation: fadeInUp 0.7s ease both; }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+        display: inline-block;
+        font-size: 0.78rem; font-weight: 700;
+        letter-spacing: 4px; text-transform: uppercase;
+        color: var(--chev-gold);
+        border-left: 3px solid var(--chev-gold);
+        padding-left: 12px;
+        margin-bottom: 16px;
+    }
+
+    .hero-title {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 900;
+        font-size: clamp(2.4rem, 7vw, 5rem);
+        line-height: 1; letter-spacing: -1px;
+        color: #fff; margin-bottom: 16px;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        color: rgba(255,255,255,0.8);
+        max-width: 520px; line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    .hero-btn { font-size: 0.88rem; padding: 14px 32px; }
+
+    .hero-btn-outline {
+        display: inline-block;
+        background: transparent;
+        border: 2px solid rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.85);
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 0.88rem;
+        letter-spacing: 2px; text-transform: uppercase;
+        padding: 12px 28px; border-radius: 0;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .hero-btn-outline:hover {
+        background: rgba(255,255,255,0.15);
+        border-color: #fff;
+        color: #fff;
+    }
+
+    /* Carousel tugmalari */
+    .carousel-ctrl-btn {
+        width: 50px; height: 50px;
+        display: flex; align-items: center; justify-content: center;
+        background: rgba(13,13,13,0.6);
+        border: 1px solid rgba(201,168,76,0.5);
+        color: var(--chev-gold);
+        font-size: 1.2rem;
+        transition: var(--transition);
+        backdrop-filter: blur(4px);
+    }
+
+    .carousel-control-prev:hover .carousel-ctrl-btn,
+    .carousel-control-next:hover .carousel-ctrl-btn {
+        background: var(--chev-gold);
+        border-color: var(--chev-gold);
+        color: var(--chev-black);
+    }
+
+    .carousel-control-prev { left: 24px; width: auto; }
+    .carousel-control-next { right: 24px; width: auto; }
+
+    /* Indikatorlar */
+    .carousel-indicators [data-bs-target] {
+        width: 32px; height: 3px;
+        background: rgba(201,168,76,0.4);
+        border: none; border-radius: 0;
+        transition: var(--transition);
+    }
+
+    .carousel-indicators .active {
+        background: var(--chev-gold);
+        width: 56px;
+    }
+
+    /* Scroll hint */
+    .hero-scroll-hint {
+        position: absolute; bottom: 24px; left: 50%;
+        transform: translateX(-50%);
+        color: rgba(201,168,76,0.7);
+        font-size: 1.1rem;
+        animation: bounce 2s infinite;
+        z-index: 10;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ===== STATIC HERO ===== */
+    .static-hero {
+        position: relative;
+        background: linear-gradient(135deg, #0D0D0D 0%, #1f1f1f 60%);
+        min-height: 80vh;
+        display: flex; align-items: center;
+        border-bottom: 3px solid var(--chev-gold);
+    }
+
+    /* ===== KATEGORIYALAR TASMA ===== */
+    .cat-bar-label {
+        font-size: 0.75rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 1.5px;
+        color: var(--chev-text-muted);
+        white-space: nowrap;
+    }
+
+    .cat-pill {
+        display: inline-flex; align-items: center;
+        padding: 6px 16px;
+        font-size: 0.82rem; font-weight: 600;
+        color: var(--chev-text);
+        border: 1px solid #ddd;
+        text-decoration: none;
+        transition: var(--transition);
+        white-space: nowrap;
+        border-radius: 0;
+    }
+
+    .cat-pill:hover, .cat-pill-all {
+        background: var(--chev-black);
+        border-color: var(--chev-black);
+        color: var(--chev-gold);
+    }
+
+    .cat-pill-all {
+        background: var(--chev-black);
+        border-color: var(--chev-black);
+        color: var(--chev-gold);
+    }
+
+    /* ===== STATISTIKA ===== */
+    .stats-section {
+        background: linear-gradient(135deg, var(--chev-black) 0%, var(--chev-charcoal) 100%);
+        border-top: 3px solid var(--chev-gold);
+        border-bottom: 3px solid var(--chev-gold);
+    }
+
+    .stat-item { padding: 20px; }
+
+    .stat-number {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 900;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        color: var(--chev-gold); line-height: 1;
+    }
+
+    .stat-label {
+        font-size: 0.85rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 1.5px;
+        color: rgba(245,245,240,0.6); margin-top: 6px;
+    }
+
+    /* ===== YANGILIK KARTA ===== */
+    .news-card {
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        transition: var(--transition); overflow: hidden;
+    }
+
+    .news-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+
+    .news-card-img { display: block; overflow: hidden; aspect-ratio: 16/9; }
+    .news-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .news-card:hover .news-card-img img { transform: scale(1.06); }
+
+    .news-card-body { padding: 20px; }
+
+    .news-category-tag {
+        display: inline-block; font-size: 0.7rem; font-weight: 700;
+        letter-spacing: 1.5px; text-transform: uppercase;
+        color: var(--chev-gold); margin-bottom: 8px;
+    }
+
+    .news-card-title {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 1.1rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px;
+    }
+
+    .news-card-title a { color: var(--chev-black); text-decoration: none; transition: var(--transition); }
+    .news-card-title a:hover { color: var(--chev-gold); }
+
+    .news-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--chev-text-muted); }
+    .news-meta i { margin-right: 4px; }
+
+    /* ===== CTA ===== */
+    .cta-section {
+        background: linear-gradient(135deg, var(--chev-black), var(--chev-charcoal));
+        padding: 80px 0;
+    }
+
+    .cta-inner { max-width: 600px; margin: 0 auto; }
+
+    .cta-title {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 900; font-size: clamp(2rem, 4vw, 3rem);
+        color: #fff; margin-bottom: 16px;
+    }
+
+    .cta-text { color: rgba(245,245,240,0.75); font-size: 1rem; margin-bottom: 32px; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 767.98px) {
+        .carousel-item { height: 70vh; min-height: 400px; }
+        .hero-btn-outline { display: none; }
+        .carousel-control-prev { left: 8px; }
+        .carousel-control-next { right: 8px; }
+    }
+
+    .py-lg-6 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+</style>
+{% endblock %}

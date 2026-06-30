@@ -1,0 +1,418 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load url_tags %}
+
+{% block title %}Avtomobillar ro'yxati{% endblock %}
+{% block meta_description %}Chevrolet UZ — barcha avtomobil modellari, narxlar va texnik xarakteristikalar{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================
+     SAHIFA SARLAVHASI
+     ============================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <span class="page-hero-eyebrow">Katalog</span>
+        <h1>Avtomobillar</h1>
+        <p class="mt-2" style="color:rgba(245,245,240,0.65); font-size:0.95rem;">
+            Jami <strong style="color:var(--chev-gold);">{{ paginator.count }}</strong> ta model topildi
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================
+     FILTER + RO'YXAT
+     ============================================================ -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- CHAP: Filter paneli -->
+            <div class="col-lg-3">
+                <div class="filter-panel">
+                    <div class="filter-panel-header">
+                        <i class="bi bi-sliders me-2"></i>Filterlar
+                        {% if current_filters.brand or current_filters.category or current_filters.q %}
+                        <a href="{% url 'main:car_list' %}" class="filter-reset-link">
+                            <i class="bi bi-x-circle me-1"></i>Tozalash
+                        </a>
+                        {% endif %}
+                    </div>
+
+                    <form method="get" id="filter-form">
+                        <!-- Qidiruv -->
+                        <div class="filter-section">
+                            <label class="filter-label">Qidiruv</label>
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control"
+                                       placeholder="Mashina nomi..."
+                                       value="{{ current_filters.q }}">
+                                <button type="submit" class="btn btn-chev-search">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Brend -->
+                        <div class="filter-section">
+                            <label class="filter-label">Brend</label>
+                            <select name="brand" class="form-select filter-select"
+                                    onchange="this.form.submit()">
+                                <option value="">Barchasi</option>
+                                {% for brand in brands %}
+                                <option value="{{ brand.slug }}"
+                                        {% if current_filters.brand == brand.slug %}selected{% endif %}>
+                                    {{ brand.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Kategoriya -->
+                        <div class="filter-section">
+                            <label class="filter-label">Kategoriya</label>
+                            <select name="category" class="form-select filter-select"
+                                    onchange="this.form.submit()">
+                                <option value="">Barchasi</option>
+                                {% for cat in categories %}
+                                <option value="{{ cat.slug }}"
+                                        {% if current_filters.category == cat.slug %}selected{% endif %}>
+                                    {{ cat.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Uzatmalar qutisi -->
+                        <div class="filter-section">
+                            <label class="filter-label">Uzatmalar qutisi</label>
+                            <div class="filter-checks">
+                                {% for value, label in transmission_choices %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                           name="transmission" id="tr_{{ value }}"
+                                           value="{{ value }}"
+                                           {% if current_filters.transmission == value %}checked{% endif %}
+                                           onchange="this.form.submit()">
+                                    <label class="form-check-label" for="tr_{{ value }}">
+                                        {{ label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                                {% if current_filters.transmission %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                           name="transmission" id="tr_all" value=""
+                                           onchange="this.form.submit()">
+                                    <label class="form-check-label text-muted" for="tr_all">
+                                        Barchasi
+                                    </label>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Yoqilg'i turi -->
+                        <div class="filter-section">
+                            <label class="filter-label">Yoqilg'i turi</label>
+                            <div class="filter-checks">
+                                {% for value, label in fuel_choices %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                           name="fuel_type" id="fuel_{{ value }}"
+                                           value="{{ value }}"
+                                           {% if current_filters.fuel_type == value %}checked{% endif %}
+                                           onchange="this.form.submit()">
+                                    <label class="form-check-label" for="fuel_{{ value }}">
+                                        {{ label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                                {% if current_filters.fuel_type %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"
+                                           name="fuel_type" id="fuel_all" value=""
+                                           onchange="this.form.submit()">
+                                    <label class="form-check-label text-muted" for="fuel_all">
+                                        Barchasi
+                                    </label>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Narx oralig'i -->
+                        <div class="filter-section">
+                            <label class="filter-label">Narx (USD)</label>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <input type="number" name="min_price" class="form-control"
+                                           placeholder="Dan" min="0"
+                                           value="{{ current_filters.min_price }}">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" name="max_price" class="form-control"
+                                           placeholder="Gacha" min="0"
+                                           value="{{ current_filters.max_price }}">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-chevrolet w-100 d-block text-center mt-2 py-2"
+                                    style="font-size:0.8rem;">
+                                Qo'llash
+                            </button>
+                        </div>
+
+                        <!-- Joriy filterlarni saqlash -->
+                        {% if current_filters.brand %}<input type="hidden" name="brand" value="{{ current_filters.brand }}">{% endif %}
+                        {% if current_filters.sort %}<input type="hidden" name="sort" value="{{ current_filters.sort }}">{% endif %}
+                    </form>
+                </div>
+            </div>
+
+            <!-- O'NG: Avtomobillar ro'yxati -->
+            <div class="col-lg-9">
+
+                <!-- Saralash va ko'rinish -->
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                    <span class="result-count text-muted" style="font-size:0.88rem;">
+                        {% if paginator.count %}
+                            {{ page_obj.start_index }}–{{ page_obj.end_index }} / {{ paginator.count }} model
+                        {% else %}
+                            Natija topilmadi
+                        {% endif %}
+                    </span>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- Saralash -->
+                        <select class="form-select form-select-sm" style="width:auto;"
+                                onchange="sortCars(this.value)">
+                            <option value="featured" {% if current_filters.sort == 'featured' or not current_filters.sort %}selected{% endif %}>Tavsiya etilganlar</option>
+                            <option value="newest" {% if current_filters.sort == 'newest' %}selected{% endif %}>Yangilari birinchi</option>
+                            <option value="price_asc" {% if current_filters.sort == 'price_asc' %}selected{% endif %}>Narx: arzondan qimmaga</option>
+                            <option value="price_desc" {% if current_filters.sort == 'price_desc' %}selected{% endif %}>Narx: qimmatdan arzona</option>
+                            <option value="popular" {% if current_filters.sort == 'popular' %}selected{% endif %}>Mashhurlar</option>
+                        </select>
+                    </div>
+                </div>
+
+                {% if cars %}
+                <!-- Avtomobil kartalar -->
+                <div class="row g-4" id="cars-grid">
+                    {% for car in cars %}
+                    <div class="col-sm-6 col-xl-4">
+                        <article class="car-card h-100">
+                            <a href="{{ car.get_absolute_url }}"
+                               class="d-block car-card-img-wrapper text-decoration-none">
+                                {% with car.main_image as img %}
+                                {% if img %}
+                                    <img src="{{ img.image.url }}"
+                                         alt="{{ img.alt_text|default:car.name }}"
+                                         loading="lazy">
+                                {% else %}
+                                    <div class="d-flex align-items-center justify-content-center h-100"
+                                         style="background:var(--chev-bg-light);">
+                                        <i class="bi bi-car-front"
+                                           style="font-size:3rem; color:#ccc;"></i>
+                                    </div>
+                                {% endif %}
+                                {% endwith %}
+                                {% if car.is_new %}
+                                <span class="car-card-badge">Yangi</span>
+                                {% elif car.is_featured %}
+                                <span class="car-card-badge" style="background:var(--chev-red);">
+                                    Tavsiya
+                                </span>
+                                {% endif %}
+                            </a>
+                            <div class="car-card-body">
+                                <div class="car-card-brand">
+                                    {{ car.brand.name }}
+                                    {% if car.category %}
+                                    · {{ car.category.name }}
+                                    {% endif %}
+                                </div>
+                                <h3 class="car-card-name">
+                                    <a href="{{ car.get_absolute_url }}"
+                                       class="text-decoration-none text-dark">
+                                        {{ car.name }}
+                                    </a>
+                                </h3>
+                                <!-- Texnik spetsifikatsiyalar -->
+                                <div class="mb-3">
+                                    {% if car.engine_power_hp %}
+                                    <span class="car-spec-pill">
+                                        <i class="bi bi-lightning-charge"></i>
+                                        {{ car.engine_power_hp }} l.s.
+                                    </span>
+                                    {% endif %}
+                                    <span class="car-spec-pill">
+                                        <i class="bi bi-gear"></i>
+                                        {{ car.get_transmission_display }}
+                                    </span>
+                                    {% if car.drive_type %}
+                                    <span class="car-spec-pill">
+                                        <i class="bi bi-arrows-move"></i>
+                                        {{ car.get_drive_type_display }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="car-card-price mb-0">
+                                        {{ car.price_formatted }}
+                                    </p>
+                                    <span class="text-muted" style="font-size:0.75rem;">
+                                        <i class="bi bi-eye me-1"></i>{{ car.views_count|intcomma }}
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- SAHIFALASH -->
+                {% if is_paginated %}
+                <nav aria-label="Sahifalash" class="mt-5">
+                    <ul class="pagination justify-content-center gap-1">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{% url_replace page=1 %}" aria-label="Birinchi">
+                                <i class="bi bi-chevron-double-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?{% url_replace page=page_obj.previous_page_number %}">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                            <li class="page-item active">
+                                <span class="page-link">{{ num }}</span>
+                            </li>
+                            {% elif num > page_obj.number|add:"-3" and num < page_obj.number|add:"3" %}
+                            <li class="page-item">
+                                <a class="page-link" href="?{% url_replace page=num %}">{{ num }}</a>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?{% url_replace page=page_obj.next_page_number %}">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?{% url_replace page=page_obj.paginator.num_pages %}">
+                                <i class="bi bi-chevron-double-right"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+
+                {% else %}
+                <!-- Natija topilmadi -->
+                <div class="empty-state text-center py-5">
+                    <i class="bi bi-search empty-icon"></i>
+                    <h3 class="mt-3">Natija topilmadi</h3>
+                    <p class="text-muted">
+                        Qidiruv shartlaringizga mos avtomobil topilmadi.<br>
+                        Filterlarni tozalab, qaytadan urining.
+                    </p>
+                    <a href="{% url 'main:car_list' %}" class="btn-chevrolet">
+                        <i class="bi bi-arrow-counterclockwise me-2"></i>Filterlarni tozalash
+                    </a>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ===== FILTER PANELI ===== */
+    .filter-panel {
+        background: #fff;
+        border: 1px solid #eee;
+        border-top: 3px solid var(--chev-gold);
+        position: sticky;
+        top: 90px;
+    }
+
+    .filter-panel-header {
+        background: var(--chev-bg-light);
+        padding: 14px 20px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 0.95rem;
+        letter-spacing: 1px; text-transform: uppercase;
+        border-bottom: 1px solid #eee;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .filter-reset-link {
+        font-size: 0.75rem; color: var(--chev-text-muted);
+        text-decoration: none; font-weight: 500;
+        font-family: 'Barlow', sans-serif; text-transform: none; letter-spacing: 0;
+    }
+
+    .filter-reset-link:hover { color: var(--chev-red); }
+
+    .filter-section {
+        padding: 16px 20px;
+        border-bottom: 1px solid #f5f5f3;
+    }
+
+    .filter-section:last-child { border-bottom: none; }
+
+    .filter-label {
+        font-size: 0.75rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 1.5px;
+        color: var(--chev-text-muted);
+        display: block; margin-bottom: 10px;
+    }
+
+    .filter-select {
+        font-size: 0.88rem;
+        border-radius: 0;
+    }
+
+    .filter-checks .form-check { margin-bottom: 6px; }
+
+    .filter-checks .form-check-input:checked {
+        background-color: var(--chev-gold);
+        border-color: var(--chev-gold);
+    }
+
+    .filter-checks .form-check-label {
+        font-size: 0.85rem; cursor: pointer;
+    }
+
+    /* ===== BO'SH HOLAT ===== */
+    .empty-state { padding: 60px 20px; }
+
+    .empty-icon {
+        font-size: 4rem;
+        color: #ccc;
+        display: block;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function sortCars(value) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('sort', value);
+        url.searchParams.set('page', '1');
+        window.location.href = url.toString();
+    }
+</script>
+{% endblock %}

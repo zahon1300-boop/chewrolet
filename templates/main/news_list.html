@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}Yangiliklar{% endblock %}
+{% block meta_description %}Chevrolet UZ — avtomobil yangiliklari, aksiyalar va e'lonlar{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div class="container">
+        <span class="page-hero-eyebrow">Media markaz</span>
+        <h1>Yangiliklar</h1>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Yangiliklar ro'yxati -->
+            <div class="col-lg-8">
+                {% if news_list %}
+                <div class="row g-4">
+                    {% for news in news_list %}
+                    <div class="col-md-6">
+                        <article class="news-card-full h-100">
+                            {% if news.cover_image %}
+                            <a href="{{ news.get_absolute_url }}" class="news-full-img-wrap d-block">
+                                <img src="{{ news.cover_image.url }}" alt="{{ news.title }}" loading="lazy">
+                            </a>
+                            {% endif %}
+                            <div class="news-full-body">
+                                {% if news.category %}
+                                <span class="news-cat-badge">{{ news.category.name }}</span>
+                                {% endif %}
+                                <h2 class="news-full-title">
+                                    <a href="{{ news.get_absolute_url }}">{{ news.title|truncatechars:80 }}</a>
+                                </h2>
+                                {% if news.excerpt %}
+                                <p class="news-full-excerpt">{{ news.excerpt|truncatechars:120 }}</p>
+                                {% endif %}
+                                <div class="news-full-meta">
+                                    <span><i class="bi bi-calendar3 me-1"></i>{{ news.published_at|date:"d.m.Y" }}</span>
+                                    <span><i class="bi bi-eye me-1"></i>{{ news.views_count|intcomma }}</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Sahifalash -->
+                {% if is_paginated %}
+                <nav class="mt-5" aria-label="Sahifalash">
+                    <ul class="pagination justify-content-center gap-1">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                                <i class="bi bi-chevron-left"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% for num in paginator.page_range %}
+                        <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                            <a class="page-link" href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}">{{ num }}</a>
+                        </li>
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+
+                {% else %}
+                <div class="text-center py-5">
+                    <i class="bi bi-newspaper" style="font-size:4rem; color:#ccc; display:block;"></i>
+                    <h3 class="mt-3">Yangiliklar topilmadi</h3>
+                    <a href="{% url 'main:news_list' %}" class="btn-chevrolet mt-3">Barchasini ko'rish</a>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Qidiruv -->
+                <div class="sidebar-widget mb-4">
+                    <div class="sidebar-widget-title">Qidiruv</div>
+                    <form method="get">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control"
+                                   placeholder="Yangilik qidirish..."
+                                   value="{{ query }}">
+                            <button type="submit" class="btn btn-chev-search">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Kategoriyalar -->
+                {% if news_categories %}
+                <div class="sidebar-widget mb-4">
+                    <div class="sidebar-widget-title">Kategoriyalar</div>
+                    <ul class="sidebar-cats">
+                        <li>
+                            <a href="{% url 'main:news_list' %}"
+                               class="{% if not current_category %}active{% endif %}">
+                                Barchasi
+                            </a>
+                        </li>
+                        {% for cat in news_categories %}
+                        <li>
+                            <a href="?category={{ cat.slug }}"
+                               class="{% if current_category == cat.slug %}active{% endif %}">
+                                {{ cat.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .news-card-full {
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        transition: var(--transition);
+        overflow: hidden;
+    }
+
+    .news-card-full:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+
+    .news-full-img-wrap { display: block; overflow: hidden; aspect-ratio: 16/9; }
+    .news-full-img-wrap img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; }
+    .news-card-full:hover .news-full-img-wrap img { transform: scale(1.06); }
+
+    .news-full-body { padding: 20px; }
+
+    .news-cat-badge {
+        display: inline-block; font-size: 0.7rem; font-weight: 700;
+        letter-spacing: 1.5px; text-transform: uppercase;
+        color: var(--chev-gold); margin-bottom: 8px;
+    }
+
+    .news-full-title {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 1.15rem; font-weight: 700; line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    .news-full-title a { color: var(--chev-black); text-decoration: none; transition: var(--transition); }
+    .news-full-title a:hover { color: var(--chev-gold); }
+
+    .news-full-excerpt { font-size: 0.85rem; color: var(--chev-text-muted); margin-bottom: 12px; }
+
+    .news-full-meta { display: flex; gap: 14px; font-size: 0.75rem; color: var(--chev-text-muted); }
+
+    /* Sidebar */
+    .sidebar-widget {
+        background: #fff;
+        border: 1px solid #eee;
+        border-top: 3px solid var(--chev-gold);
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .sidebar-widget-title {
+        background: var(--chev-bg-light);
+        padding: 12px 20px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 0.9rem;
+        letter-spacing: 1.5px; text-transform: uppercase;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar-widget form { padding: 16px; }
+
+    .sidebar-cats { list-style: none; padding: 0; margin: 0; }
+    .sidebar-cats li { border-bottom: 1px solid #f5f5f3; }
+    .sidebar-cats li:last-child { border-bottom: none; }
+    .sidebar-cats a {
+        display: block; padding: 10px 20px;
+        font-size: 0.88rem; color: var(--chev-text);
+        text-decoration: none; transition: var(--transition);
+    }
+    .sidebar-cats a:hover, .sidebar-cats a.active {
+        background: var(--chev-bg-light);
+        color: var(--chev-gold);
+        padding-left: 28px;
+    }
+    .sidebar-cats a.active { font-weight: 700; border-left: 3px solid var(--chev-gold); }
+</style>
+{% endblock %}

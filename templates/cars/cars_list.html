@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Avtomobillar</h1>
+
+<div class="filters">
+    <a href="{% url 'main:cars_list' %}" class="active">Barchasi</a>
+    {% for category in categories %}
+    <a href="?category={{ category.slug }}">{{ category.name }}</a>
+    {% endfor %}
+</div>
+
+<div class="grid">
+    {% for car in cars %}
+    <div class="card">
+        {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.name }}">
+        {% endif %}
+        <h3>{{ car.name }}</h3>
+        <p>{{ car.get_display_price|floatformat:0 }} so'm</p>
+        <a href="{% url 'main:car_detail' slug=car.slug %}" class="btn">Batafsil</a>
+    </div>
+    {% empty %}
+    <p>Avtomobillar topilmadi.</p>
+    {% endfor %}
+</div>
+{% endblock %}

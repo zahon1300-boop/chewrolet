@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Dilerlar</h1>
+
+<div class="grid">
+    {% for dealer in dealers %}
+    <div class="card">
+        <h3>{{ dealer.name }}</h3>
+        <p>{{ dealer.address }}</p>
+        <p>Tel: {{ dealer.phone }}</p>
+        <p>Ish vaqti: {{ dealer.working_hours }}</p>
+    </div>
+    {% empty %}
+    <p>Dilerlar topilmadi.</p>
+    {% endfor %}
+</div>
+{% endblock %}

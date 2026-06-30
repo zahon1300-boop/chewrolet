@@ -1,0 +1,451 @@
+{% extends "base.html" %}
+
+{% block title %}Mening Profilim{% endblock %}
+{% block meta_description %}Chevrolet UZ — foydalanuvchi profili{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================
+     SAHIFA SARLAVHASI
+     ============================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <span class="page-hero-eyebrow">Shaxsiy kabinet</span>
+        <h1>Mening Profilim</h1>
+    </div>
+</section>
+
+<!-- ============================================================
+     PROFIL ASOSIY KONTENT
+     ============================================================ -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- CHAP PANEL: Avatar va qisqa info -->
+            <div class="col-lg-3">
+                <div class="profile-sidebar">
+
+                    <!-- Avatar -->
+                    <div class="avatar-container mb-4">
+                        <div class="avatar-wrapper">
+                            <img src="{{ profile.avatar_url }}"
+                                 alt="{{ user.get_full_name|default:user.username }} avatari"
+                                 id="avatar-preview"
+                                 class="avatar-img">
+                            <div class="avatar-overlay">
+                                <i class="bi bi-camera-fill"></i>
+                                <span>O'zgartirish</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Foydalanuvchi nomi -->
+                    <div class="text-center mb-4">
+                        <h4 class="profile-username">
+                            {{ user.get_full_name|default:user.username }}
+                        </h4>
+                        <p class="profile-handle text-muted">@{{ user.username }}</p>
+                        {% if user.is_staff %}
+                        <span class="badge" style="background:var(--chev-gold); color:var(--chev-black);">
+                            <i class="bi bi-shield-check me-1"></i>Admin
+                        </span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Statistika -->
+                    <div class="profile-stats">
+                        <div class="profile-stat-item">
+                            <div class="profile-stat-value">
+                                {{ user.date_joined|date:"Y" }}
+                            </div>
+                            <div class="profile-stat-label">Ro'yxatdan o'tgan yil</div>
+                        </div>
+                        <div class="profile-stat-item">
+                            <div class="profile-stat-value">
+                                {% if profile.city %}{{ profile.city }}{% else %}—{% endif %}
+                            </div>
+                            <div class="profile-stat-label">Shahar</div>
+                        </div>
+                    </div>
+
+                    <!-- Qo'shimcha havolalar -->
+                    <div class="profile-nav mt-4">
+                        {% if user.is_staff %}
+                        <a href="{% url 'admin:index' %}" class="profile-nav-link">
+                            <i class="bi bi-speedometer2"></i> Admin paneli
+                        </a>
+                        {% endif %}
+                        <a href="{% url 'password_change' %}" class="profile-nav-link">
+                            <i class="bi bi-shield-lock"></i> Parolni o'zgartirish
+                        </a>
+                        <a href="{% url 'logout' %}" class="profile-nav-link text-danger">
+                            <i class="bi bi-box-arrow-right"></i> Chiqish
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- O'NG PANEL: Ma'lumotlarni tahrirlash -->
+            <div class="col-lg-9">
+
+                <!-- Xato xabarlari -->
+                {% if messages %}
+                <div class="mb-4">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Tahrirlash formasi -->
+                <form method="post" enctype="multipart/form-data" novalidate id="profile-form">
+                    {% csrf_token %}
+
+                    <!-- === SHAXSIY MA'LUMOTLAR === -->
+                    <div class="profile-card mb-4">
+                        <div class="profile-card-header">
+                            <i class="bi bi-person-badge me-2"></i>
+                            Shaxsiy ma'lumotlar
+                        </div>
+                        <div class="profile-card-body">
+                            <div class="row g-3">
+                                <!-- Ism -->
+                                <div class="col-sm-6">
+                                    <label for="{{ user_form.first_name.id_for_label }}" class="form-label">
+                                        {{ user_form.first_name.label }}
+                                    </label>
+                                    {{ user_form.first_name }}
+                                    {% if user_form.first_name.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in user_form.first_name.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Familiya -->
+                                <div class="col-sm-6">
+                                    <label for="{{ user_form.last_name.id_for_label }}" class="form-label">
+                                        {{ user_form.last_name.label }}
+                                    </label>
+                                    {{ user_form.last_name }}
+                                    {% if user_form.last_name.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in user_form.last_name.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-sm-6">
+                                    <label for="{{ user_form.email.id_for_label }}" class="form-label">
+                                        {{ user_form.email.label }}
+                                    </label>
+                                    {{ user_form.email }}
+                                    {% if user_form.email.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in user_form.email.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Telefon -->
+                                <div class="col-sm-6">
+                                    <label for="{{ profile_form.phone.id_for_label }}" class="form-label">
+                                        {{ profile_form.phone.label }}
+                                    </label>
+                                    {{ profile_form.phone }}
+                                    {% if profile_form.phone.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.phone.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Tug'ilgan sana -->
+                                <div class="col-sm-6">
+                                    <label for="{{ profile_form.date_of_birth.id_for_label }}" class="form-label">
+                                        {{ profile_form.date_of_birth.label }}
+                                    </label>
+                                    {{ profile_form.date_of_birth }}
+                                    {% if profile_form.date_of_birth.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.date_of_birth.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Bio -->
+                                <div class="col-12">
+                                    <label for="{{ profile_form.bio.id_for_label }}" class="form-label">
+                                        {{ profile_form.bio.label }}
+                                    </label>
+                                    {{ profile_form.bio }}
+                                    <div class="form-text">Maksimal 500 ta belgi.</div>
+                                    {% if profile_form.bio.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.bio.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === MANZIL === -->
+                    <div class="profile-card mb-4">
+                        <div class="profile-card-header">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Manzil ma'lumotlari
+                        </div>
+                        <div class="profile-card-body">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <label for="{{ profile_form.city.id_for_label }}" class="form-label">
+                                        {{ profile_form.city.label }}
+                                    </label>
+                                    {{ profile_form.city }}
+                                    {% if profile_form.city.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.city.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="{{ profile_form.address.id_for_label }}" class="form-label">
+                                        {{ profile_form.address.label }}
+                                    </label>
+                                    {{ profile_form.address }}
+                                    {% if profile_form.address.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.address.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === AVATAR YUKLASH === -->
+                    <div class="profile-card mb-4">
+                        <div class="profile-card-header">
+                            <i class="bi bi-image me-2"></i>
+                            Profil rasmi
+                        </div>
+                        <div class="profile-card-body">
+                            <div class="row align-items-center g-3">
+                                <div class="col-auto">
+                                    <img src="{{ profile.avatar_url }}" alt="Joriy avatar"
+                                         class="avatar-current" id="avatar-preview-small">
+                                </div>
+                                <div class="col">
+                                    <label for="{{ profile_form.avatar.id_for_label }}" class="form-label">
+                                        Yangi rasm tanlash
+                                    </label>
+                                    {{ profile_form.avatar }}
+                                    <div class="form-text">
+                                        <i class="bi bi-info-circle me-1"></i>
+                                        JPEG, PNG yoki WebP. Maksimal hajm: 5 MB.
+                                        Rasm avtomatik 400×400 ga kesib olinadi.
+                                    </div>
+                                    {% if profile_form.avatar.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in profile_form.avatar.errors %}{{ error }}{% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saqlash tugmasi -->
+                    <div class="d-flex gap-3 justify-content-end">
+                        <a href="{% url 'main:home' %}" class="btn-chev-outline px-4 py-2">
+                            Bekor qilish
+                        </a>
+                        <button type="submit" class="btn-chevrolet px-5 py-2">
+                            <i class="bi bi-check-lg me-2"></i>Saqlash
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ===== PROFIL SIDEBAR ===== */
+    .profile-sidebar {
+        position: sticky; top: 90px;
+    }
+
+    .avatar-container { text-align: center; }
+
+    .avatar-wrapper {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .avatar-img {
+        width: 140px; height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--chev-gold);
+        box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+        display: block;
+    }
+
+    .avatar-overlay {
+        position: absolute; inset: 0;
+        background: rgba(13,13,13,0.7);
+        border-radius: 50%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        color: #fff; font-size: 0.75rem;
+        opacity: 0; transition: var(--transition);
+    }
+
+    .avatar-overlay i { font-size: 1.3rem; margin-bottom: 4px; }
+
+    .avatar-wrapper:hover .avatar-overlay { opacity: 1; }
+
+    .profile-username {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 1.3rem;
+        color: var(--chev-black); margin-bottom: 4px;
+    }
+
+    .profile-handle { font-size: 0.85rem; }
+
+    /* ===== STATS ===== */
+    .profile-stats {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        padding: 16px 0;
+        display: flex; flex-direction: column; gap: 12px;
+    }
+
+    .profile-stat-item { text-align: center; }
+
+    .profile-stat-value {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 1.1rem;
+        color: var(--chev-gold);
+    }
+
+    .profile-stat-label {
+        font-size: 0.72rem; color: var(--chev-text-muted);
+        text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    /* ===== NAV ===== */
+    .profile-nav { display: flex; flex-direction: column; gap: 4px; }
+
+    .profile-nav-link {
+        display: flex; align-items: center; gap: 10px;
+        padding: 10px 14px;
+        font-size: 0.85rem; font-weight: 500;
+        color: var(--chev-text); text-decoration: none;
+        border-left: 3px solid transparent;
+        transition: var(--transition);
+    }
+
+    .profile-nav-link:hover {
+        background: var(--chev-bg-light);
+        border-left-color: var(--chev-gold);
+        color: var(--chev-black);
+        padding-left: 20px;
+    }
+
+    /* ===== PROFIL KARTALAR ===== */
+    .profile-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    .profile-card-header {
+        background: var(--chev-bg-light);
+        border-bottom: 2px solid var(--chev-gold);
+        padding: 14px 24px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 1rem;
+        letter-spacing: 0.5px; text-transform: uppercase;
+        color: var(--chev-black);
+    }
+
+    .profile-card-body { padding: 24px; }
+
+    /* ===== JORIY AVATAR ===== */
+    .avatar-current {
+        width: 72px; height: 72px;
+        border-radius: 50%; object-fit: cover;
+        border: 3px solid var(--chev-gold);
+    }
+
+    /* ===== IS_VALID qo'shimchalari ===== */
+    .form-control.is-invalid,
+    .form-select.is-invalid {
+        border-color: #dc3545;
+        background-image: none;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Avatar preview — yangi rasm tanlanganda oldindan ko'rish
+    const avatarInput = document.getElementById('id_avatar');
+    if (avatarInput) {
+        avatarInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const previewSmall = document.getElementById('avatar-preview-small');
+                    if (previewSmall) previewSmall.src = ev.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // Bio belgilar sanoqi
+    const bioField = document.getElementById('id_bio');
+    if (bioField) {
+        const maxLength = 500;
+        const counter = document.createElement('div');
+        counter.className = 'form-text text-end';
+        counter.id = 'bio-counter';
+        bioField.parentNode.appendChild(counter);
+
+        function updateCounter() {
+            const remaining = maxLength - bioField.value.length;
+            counter.textContent = `${bioField.value.length} / ${maxLength}`;
+            counter.style.color = remaining < 50 ? 'var(--chev-red)' : 'var(--chev-text-muted)';
+        }
+
+        bioField.addEventListener('input', updateCounter);
+        updateCounter();
+    }
+
+    // Forma jo'natilayotganda tugmani o'chirish (duplicate submit oldini olish)
+    document.getElementById('profile-form')?.addEventListener('submit', function() {
+        const btn = this.querySelector('[type="submit"]');
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Saqlanmoqda...';
+        }
+    });
+</script>
+{% endblock %}

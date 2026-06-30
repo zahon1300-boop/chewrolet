@@ -1,0 +1,24 @@
+# ============================================================
+# Chevrolet UZ — Python paketlar ro'yxati
+# ============================================================
+
+# Django asosiy framework
+Django==5.0.6
+
+# Rasm ishlash
+Pillow==10.3.0
+
+# PostgreSQL uchun (production)
+psycopg2-binary==2.9.9
+
+# Muhit o'zgaruvchilar (.env fayli uchun)
+python-dotenv==1.0.1
+
+# Django Debug Toolbar (faqat development)
+django-debug-toolbar==4.3.0
+
+# Statik fayllarni optimallashtirish (production)
+whitenoise==6.6.0
+
+# Gunicorn (production WSGI server)
+gunicorn==22.0.0
