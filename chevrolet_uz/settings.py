@@ -29,7 +29,12 @@ ENV_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split()
 ALLOWED_HOSTS = (
     DEFAULT_ALLOWED_HOSTS
     + ENV_ALLOWED_HOSTS
-    + ["chewrolet-3.onrender.com", "chewrolet-7.onrender.com", "*.onrender.com"]
+    + [
+        "chewrolet-3.onrender.com",
+        "chewrolet-7.onrender.com",
+        "chewrolet-7777.onrender.com",
+        "*.onrender.com",
+    ]
 )
 
 # ==============================================================================
