@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: chevrolet-uz
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn chevrolet_uz.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.2
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: False
+      - key: DJANGO_ALLOWED_HOSTS
+        value: your-app-name.onrender.com
