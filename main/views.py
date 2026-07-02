@@ -7,6 +7,8 @@ from __future__ import annotations
 import logging
 from typing import Any
 
+from itertools import islice
+
 from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -76,12 +78,16 @@ class HomeView(TemplateView):
         context["hero_banners"] = HeroBanner.objects.filter(is_active=True).order_by("order")
 
         # Tavsiya etilgan avtomobillar
-        context["featured_cars"] = (
+        featured_cars = list(
             Car.objects.filter(is_active=True, is_featured=True)
             .select_related("brand", "category")
             .prefetch_related("images")
             .order_by("-created_at")[:6]
         )
+        context["featured_cars"] = featured_cars
+        context["featured_car_groups"] = [
+            list(islice(featured_cars[i:], 3)) for i in range(0, len(featured_cars), 3)
+        ]
 
         # Barcha aktiv avtomobillar
         context["latest_cars"] = (

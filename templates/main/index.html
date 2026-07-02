@@ -137,7 +137,7 @@
 <!-- ============================================================
      TAVSIYA ETILGAN AVTOMOBILLAR
      ============================================================ -->
-{% if featured_cars %}
+{% if featured_car_groups %}
 <section class="py-5 py-lg-6" id="featured-cars">
     <div class="container">
         <div class="d-flex justify-content-between align-items-end mb-4">
@@ -151,53 +151,83 @@
             </a>
         </div>
 
-        <div class="row g-4">
-            {% for car in featured_cars %}
-            <div class="col-sm-6 col-lg-4">
-                <article class="car-card h-100">
-                    <a href="{{ car.get_absolute_url }}" class="d-block car-card-img-wrapper text-decoration-none">
-                        {% with car.main_image as img %}
-                        {% if img %}
-                            <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:car.name }}" loading="lazy">
-                        {% else %}
-                            <div class="d-flex align-items-center justify-content-center h-100 bg-light">
-                                <i class="bi bi-car-front" style="font-size:3rem; color:#ccc;"></i>
-                            </div>
-                        {% endif %}
-                        {% endwith %}
-                        {% if car.is_new %}
-                        <span class="car-card-badge">Yangi</span>
-                        {% endif %}
-                    </a>
-                    <div class="car-card-body">
-                        <div class="car-card-brand">{{ car.brand.name }}</div>
-                        <h3 class="car-card-name">
-                            <a href="{{ car.get_absolute_url }}" class="text-decoration-none text-dark">
-                                {{ car.name }}
-                            </a>
-                        </h3>
-                        <div class="mb-3">
-                            {% if car.engine_power_hp %}
-                            <span class="car-spec-pill">
-                                <i class="bi bi-lightning-charge"></i>{{ car.engine_power_hp }} ot kuchi
-                            </span>
-                            {% endif %}
-                            <span class="car-spec-pill">
-                                <i class="bi bi-gear"></i>{{ car.get_transmission_display }}
-                            </span>
-                            <span class="car-spec-pill">
-                                <i class="bi bi-fuel-pump"></i>{{ car.get_fuel_type_display }}
-                            </span>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="car-card-price mb-0">{{ car.price_formatted }}</p>
-                            <a href="{{ car.get_absolute_url }}" class="btn-chev-outline py-1 px-3"
-                               style="font-size:0.8rem;">Ko'rish</a>
-                        </div>
-                    </div>
-                </article>
+        <div id="featuredCarsCarousel" class="carousel slide" data-bs-ride="carousel">
+            {% if featured_car_groups|length > 1 %}
+            <div class="carousel-indicators">
+                {% for group in featured_car_groups %}
+                <button type="button" data-bs-target="#featuredCarsCarousel"
+                        data-bs-slide-to="{{ forloop.counter0 }}"
+                        {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                        aria-label="Slayt {{ forloop.counter }}"></button>
+                {% endfor %}
             </div>
-            {% endfor %}
+            {% endif %}
+
+            <div class="carousel-inner">
+                {% for group in featured_car_groups %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="row g-4">
+                        {% for car in group %}
+                        <div class="col-sm-6 col-lg-4">
+                            <article class="car-card h-100">
+                                <a href="{{ car.get_absolute_url }}" class="d-block car-card-img-wrapper text-decoration-none">
+                                    {% with car.main_image as img %}
+                                    {% if img %}
+                                        <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:car.name }}" loading="lazy">
+                                    {% else %}
+                                        <div class="d-flex align-items-center justify-content-center h-100 bg-light">
+                                            <i class="bi bi-car-front" style="font-size:3rem; color:#ccc;"></i>
+                                        </div>
+                                    {% endif %}
+                                    {% endwith %}
+                                    {% if car.is_new %}
+                                    <span class="car-card-badge">Yangi</span>
+                                    {% endif %}
+                                </a>
+                                <div class="car-card-body">
+                                    <div class="car-card-brand">{{ car.brand.name }}</div>
+                                    <h3 class="car-card-name">
+                                        <a href="{{ car.get_absolute_url }}" class="text-decoration-none text-dark">
+                                            {{ car.name }}
+                                        </a>
+                                    </h3>
+                                    <div class="mb-3">
+                                        {% if car.engine_power_hp %}
+                                        <span class="car-spec-pill">
+                                            <i class="bi bi-lightning-charge"></i>{{ car.engine_power_hp }} ot kuchi
+                                        </span>
+                                        {% endif %}
+                                        <span class="car-spec-pill">
+                                            <i class="bi bi-gear"></i>{{ car.get_transmission_display }}
+                                        </span>
+                                        <span class="car-spec-pill">
+                                            <i class="bi bi-fuel-pump"></i>{{ car.get_fuel_type_display }}
+                                        </span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="car-card-price mb-0">{{ car.price_formatted }}</p>
+                                        <a href="{{ car.get_absolute_url }}" class="btn-chev-outline py-1 px-3"
+                                           style="font-size:0.8rem;">Ko'rish</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% if featured_car_groups|length > 1 %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Oldingi</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredCarsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Keyingi</span>
+            </button>
+            {% endif %}
         </div>
 
         <div class="text-center mt-4 d-md-none">
