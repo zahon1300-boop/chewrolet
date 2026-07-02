@@ -24,10 +24,9 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = os.environ.get(
-    "DJANGO_ALLOWED_HOSTS",
-    "localhost 127.0.0.1 [::1]"
-).split()
+DEFAULT_ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
+ENV_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split()
+ALLOWED_HOSTS = DEFAULT_ALLOWED_HOSTS + ENV_ALLOWED_HOSTS + ["chewrolet-3.onrender.com", "*.onrender.com"]
 
 # ==============================================================================
 # ILOVALAR
