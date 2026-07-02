@@ -1,1 +1,1 @@
-web: gunicorn chevrolet_uz.wsgi:application
+web: gunicorn app:app
