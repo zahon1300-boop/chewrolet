@@ -1224,3 +1224,49 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. Y
 [WARNING] 2026-06-29 22:11:01,681 basehttp "GET /apple-touch-icon.png HTTP/1.1" 404 5290
 [WARNING] 2026-06-29 22:11:05,884 log Not Found: /favicon.ico
 [WARNING] 2026-06-29 22:11:05,952 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[INFO] 2026-07-02 10:04:36,918 autoreload Watching for file changes with StatReloader
+[INFO] 2026-07-02 10:05:13,673 basehttp "GET / HTTP/1.1" 200 47391
+[WARNING] 2026-07-02 10:05:18,229 log Not Found: /favicon.ico
+[WARNING] 2026-07-02 10:05:18,396 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[WARNING] 2026-07-02 10:05:19,949 log Not Found: /favicon.ico
+[WARNING] 2026-07-02 10:05:20,101 basehttp "GET /favicon.ico HTTP/1.1" 404 5263
+[INFO] 2026-07-02 10:05:21,203 basehttp "GET /media/news/2026/6/news_new.jpg HTTP/1.1" 200 133689
+[INFO] 2026-07-02 10:05:21,476 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 200 166061
+[INFO] 2026-07-02 10:05:55,098 basehttp "GET /cars/?sort=featured HTTP/1.1" 200 49507
+[INFO] 2026-07-02 10:06:32,949 basehttp "GET /admin HTTP/1.1" 301 0
+[INFO] 2026-07-02 10:06:33,414 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:06:34,916 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:16:36,786 autoreload Watching for file changes with StatReloader
+[INFO] 2026-07-02 10:17:06,378 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:17:06,599 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:17:12,046 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:17:12,247 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:17:13,430 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:17:13,772 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:17:20,350 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:17:20,602 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:17:21,684 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:17:21,948 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:18:13,989 autoreload Watching for file changes with StatReloader
+[INFO] 2026-07-02 10:18:31,450 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:18:34,419 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:18:34,584 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:18:35,822 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:18:36,021 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:22:40,003 basehttp "GET /cars/chevrolet-malibu-2024/ HTTP/1.1" 200 39879
+[INFO] 2026-07-02 10:22:54,482 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:22:55,215 basehttp "GET / HTTP/1.1" 200 47391
+[INFO] 2026-07-02 10:23:00,767 basehttp "POST /logout/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 10:23:02,356 basehttp "GET / HTTP/1.1" 200 47114
+[WARNING] 2026-07-02 10:26:59,131 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2026-07-02 10:26:59,181 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5374
+[INFO] 2026-07-02 10:26:59,240 basehttp - Broken pipe from ('127.0.0.1', 52687)
+[INFO] 2026-07-02 10:27:14,190 basehttp "GET /login/ HTTP/1.1" 200 31055
+[WARNING] 2026-07-02 10:27:18,604 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2026-07-02 10:27:18,641 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5374
+[INFO] 2026-07-02 10:27:26,735 basehttp "POST /login/ HTTP/1.1" 200 31459
+[WARNING] 2026-07-02 10:27:28,628 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[WARNING] 2026-07-02 10:27:28,645 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5374
+[INFO] 2026-07-02 10:27:46,681 basehttp "GET /login/ HTTP/1.1" 200 31055
+[WARNING] 2026-07-02 10:27:51,356 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[INFO] 2026-07-02 10:27:51,457 basehttp - Broken pipe from ('127.0.0.1', 53088)
