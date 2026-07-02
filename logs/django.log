@@ -1270,3 +1270,22 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. Y
 [INFO] 2026-07-02 10:27:46,681 basehttp "GET /login/ HTTP/1.1" 200 31055
 [WARNING] 2026-07-02 10:27:51,356 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 [INFO] 2026-07-02 10:27:51,457 basehttp - Broken pipe from ('127.0.0.1', 53088)
+[INFO] 2026-07-02 11:54:48,826 autoreload Watching for file changes with StatReloader
+[INFO] 2026-07-02 11:55:13,109 basehttp "GET / HTTP/1.1" 200 48948
+[WARNING] 2026-07-02 11:55:15,072 log Not Found: /favicon.ico
+[WARNING] 2026-07-02 11:55:15,093 basehttp "GET /favicon.ico HTTP/1.1" 404 5391
+[WARNING] 2026-07-02 11:55:15,391 log Not Found: /favicon.ico
+[WARNING] 2026-07-02 11:55:15,456 basehttp "GET /favicon.ico HTTP/1.1" 404 5391
+[INFO] 2026-07-02 11:55:21,210 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-02 11:55:21,925 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4169
+[INFO] 2026-07-02 11:55:24,850 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[INFO] 2026-07-02 11:55:24,939 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[INFO] 2026-07-02 11:55:24,995 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+[INFO] 2026-07-02 11:55:25,036 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+[INFO] 2026-07-02 11:55:25,043 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 21544
+[INFO] 2026-07-02 11:55:25,057 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+[INFO] 2026-07-02 11:55:25,153 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+[INFO] 2026-07-02 11:55:41,902 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
+[INFO] 2026-07-02 11:56:28,405 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
+[INFO] 2026-07-02 11:56:46,717 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
+[INFO] 2026-07-02 12:01:06,353 signals Yangi profil yaratildi: hasan
