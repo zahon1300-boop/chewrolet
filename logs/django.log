@@ -1289,3 +1289,40 @@ django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. Y
 [INFO] 2026-07-02 11:56:28,405 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
 [INFO] 2026-07-02 11:56:46,717 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
 [INFO] 2026-07-02 12:01:06,353 signals Yangi profil yaratildi: hasan
+[INFO] 2026-07-04 10:08:44,694 autoreload Watching for file changes with StatReloader
+[INFO] 2026-07-04 10:08:57,382 basehttp "GET / HTTP/1.1" 200 48948
+[INFO] 2026-07-04 10:08:59,023 basehttp "GET /media/cars/chevrolet-equinox-2024/car_chevrolet-equinox-2024_0.jpg HTTP/1.1" 304 0
+[WARNING] 2026-07-04 10:09:00,573 log Not Found: /favicon.ico
+[WARNING] 2026-07-04 10:09:00,657 basehttp "GET /favicon.ico HTTP/1.1" 404 5391
+[WARNING] 2026-07-04 10:09:00,919 log Not Found: /favicon.ico
+[WARNING] 2026-07-04 10:09:01,193 basehttp "GET /favicon.ico HTTP/1.1" 404 5391
+[INFO] 2026-07-04 10:09:02,958 basehttp - Broken pipe from ('127.0.0.1', 63141)
+[INFO] 2026-07-04 10:09:03,133 basehttp "GET /admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-04 10:09:03,872 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4169
+[INFO] 2026-07-04 10:09:04,144 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:04,349 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:04,382 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:04,440 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:04,541 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:04,617 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[INFO] 2026-07-04 10:09:05,574 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+[INFO] 2026-07-04 10:09:09,252 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4379
+[INFO] 2026-07-04 10:09:18,910 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[INFO] 2026-07-04 10:09:19,055 basehttp "GET /admin/ HTTP/1.1" 200 10078
+[INFO] 2026-07-04 10:09:19,270 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[INFO] 2026-07-04 10:09:19,303 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[INFO] 2026-07-04 10:09:19,493 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[INFO] 2026-07-04 10:09:21,975 basehttp "GET /admin/main/carbrand/add/ HTTP/1.1" 200 13023
+[INFO] 2026-07-04 10:09:22,005 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[INFO] 2026-07-04 10:09:22,023 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[INFO] 2026-07-04 10:09:22,025 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+[INFO] 2026-07-04 10:09:22,205 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+[INFO] 2026-07-04 10:09:22,224 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+[INFO] 2026-07-04 10:09:22,226 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[INFO] 2026-07-04 10:09:22,250 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[INFO] 2026-07-04 10:09:22,301 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[INFO] 2026-07-04 10:09:22,349 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+[INFO] 2026-07-04 10:09:22,444 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 6253
+[INFO] 2026-07-04 10:09:22,481 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[INFO] 2026-07-04 10:09:22,520 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[INFO] 2026-07-04 10:09:22,981 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
