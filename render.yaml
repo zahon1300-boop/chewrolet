@@ -7,7 +7,7 @@ services:
     releaseCommand: "python manage.py migrate --noinput && python manage.py collectstatic --noinput"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12.2
+        value: 3.14.3
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DJANGO_DEBUG
